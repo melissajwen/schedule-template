@@ -1,0 +1,200 @@
+{
+	"showSchedule": [
+		{
+			"showID": "dreamstate",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "Dream State",
+			"djName": "DJ Graven",
+			"description": "Iconic Beats Brought To You Every Week By DJ Graven",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=930#here"
+			}
+		},
+		{
+			"showID": "justplaythehits",
+			"dataStart": "9:00 AM",
+			"dataEnd": "10:00 AM",
+			"eventName": "Just Play the Hits",
+			"djName": "DJ Seen Leewow",
+			"description": "All the Hits, All the Time",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=739#here"
+			}
+		},
+		{
+			"showID": "soundinterrupted",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "Sound Interrupted",
+			"djName": "Kristin",
+			"description": "fresh new songs",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/michael.K.music/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=810#here"
+			}
+		},
+		{
+			"showID": "soupedup",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "Souped Up",
+			"djName": "DJ Casanova",
+			"description": "DJ Casanova’s alphabet soup, served weekly and made with luvvv",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=453#here"
+			}
+		},
+		{
+			"showID": "exfan",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "Ex-Fan des Sixties",
+			"djName": "Princess Groove",
+			"description": "Let's Groove! These boots WERE made for walking",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=497#here"
+			}
+		},
+		{
+			"showID": "realax",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "Realax",
+			"djName": "Roger, the Cook",
+			"description": "R&R on Realax Radio",
+			"media": {
+				"facebook": "https://twitter.com/RadioRealax",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=624#here"
+			}
+		},
+		{
+			"showID": "hxppyhr",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "hxppy hr",
+			"djName": "dj normal korean",
+			"description": "we're on the air because we care",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=262#here"
+			}
+		},
+		{
+			"showID": "liveshow",
+			"dataStart": "3:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "The Live Show",
+			"djName": "DJ Rat Villain",
+			"description": "",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=801#here"
+			}
+		},
+		{
+			"showID": "itsmells",
+			"dataStart": "6:00 PM",
+			"dataEnd": "7:00 PM",
+			"eventName": "It Smells Loud in Here",
+			"djName": "DJ Stinky",
+			"description": "Woowee! Pungent tracks with DJ Stinky for when you want to cry or start a mosh pit by yourself.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=745#here"
+			}
+		},
+		{
+			"showID": "altsilk",
+			"dataStart": "7:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "Alt-Silk",
+			"djName": "DJ Emmy P",
+			"description": "Red Wine & Cashmere Vibes",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=462#here"
+			}
+		},
+		{
+			"showID": "eljangueo",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "El Jangueo",
+			"djName": "Cata",
+			"description": "Latin jams and good vibes",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=299#here"
+			}
+		},
+		{
+			"showID": "goldenhour",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "golden hour",
+			"djName": "dj egg waffle",
+			"description": "get in ur feelings with dj egg waffle",
+			"media": {
+				"facebook": "https://twitter.com/djeggwaffle",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=927#here"
+			}
+		},
+		{
+			"showID": "conditioning",
+			"dataStart": "10:00 PM",
+			"dataEnd": "11:00 PM",
+			"eventName": "Conditioning",
+			"djName": "Jung Hollywood",
+			"description": "Sweet jams, rare gems + more 4 u !",
+			"media": {
+				"facebook": "https://www.facebook.com/conditioningla/",
+				"instagram": "",
+				"soundcloud": "https://soundcloud.com/conditioningla%20",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=506#here"
+			}
+		},
+		{
+			"showID": "tokyodrift",
+			"dataStart": "11:00 PM",
+			"dataEnd": "12:00 AM",
+			"eventName": "Tokyo Drift",
+			"djName": "dj cbay",
+			"description": "the funk shall be within you",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=577#here"
+			}
+		}
+	]	
+}

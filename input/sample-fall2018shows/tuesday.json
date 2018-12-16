@@ -1,0 +1,284 @@
+{
+	"showSchedule": [
+		{
+			"showID": "firstimpressions",
+			"dataStart": "12:00 AM",
+			"dataEnd": "1:00 AM",
+			"eventName": "First Impressions",
+			"djName": "DJ Kaleidoscope",
+			"description": "There's a first time for everything.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=586#here"
+			}
+		},
+		{
+			"showID": "aux",
+			"dataStart": "1:00 AM",
+			"dataEnd": "2:00 AM",
+			"eventName": "if i had the AUX cord",
+			"djName": "babygurl",
+			"description": "fresh hits and undiscovered talents",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=879#here"
+			}
+		},
+		{
+			"showID": "sleepysadboi",
+			"dataStart": "2:00 AM",
+			"dataEnd": "3:00 AM",
+			"eventName": "Sleepy Sadboi Lounge Hour",
+			"djName": "DJ Yane",
+			"description": "Stole your grandma's record collection (and then i freaked it)",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=892#here"
+			}
+		},
+		{
+			"showID": "impicking",
+			"dataStart": "6:00 AM",
+			"dataEnd": "7:00 AM",
+			"eventName": "I'm Picking the Music!",
+			"djName": "Edna Mode",
+			"description": "Music and conversation, curated by Edna Mode",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=894#here"
+			}
+	    }, 
+		{
+			"showID": "billmurray",
+			"dataStart": "7:00 AM",
+			"dataEnd": "8:00 AM",
+			"eventName": "Bill Murray's House",
+			"djName": "FLuke",
+			"description": "An incoherent mess of indie rock and 90's nostalgia.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=919#here"
+			}
+	    }, 
+		{
+			"showID": "insidevoices",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "Inside Voices",
+			"djName": "DJ Rat Villain",
+			"description": "Locals Only Tunes for Kids Who Pick Their Nose in Traffic",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=801#here"
+			}
+		},
+		{
+			"showID": "british",
+			"dataStart": "9:00 AM",
+			"dataEnd": "10:00 AM",
+			"eventName": "Brit(ish) Invasion",
+			"djName": "DJ Britmin",
+			"description": "The British are coming!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=378#here"
+			}
+		},
+		{
+			"showID": "bestofthefest",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "best of the fest",
+			"djName": "J-ME",
+			"description": "the best music from your favorite festivals now and then",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=789#here"
+			}
+		},
+		{
+			"showID": "whatamiwatching",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "What Am I Watching?",
+			"djName": "Jordyn Tyler",
+			"description": "What Are We Actually Watching?: Posing Questions About The Biggest Movies, TV, and Plays of the Moment",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=476#here"
+			}
+		},
+		{
+			"showID": "yadayada",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "Yada Yada",
+			"djName": "DJ Saabs",
+			"description": "Come explore the sub genres of rock ‘n’ roll with DJ Saabs",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=440#here"
+			}
+		},
+		{
+			"showID": "gab",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "Gab with Gab",
+			"djName": "Gabra Cadabra",
+			"description": "Magical Music and Mind Moments With Gabra Cadabra",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=885#here"
+			}
+		},
+		{
+			"showID": "bitcrush",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "Bitcrush",
+			"djName": "DJ Nali",
+			"description": "A solid hour of bleeps and bloops.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=340#here"
+			}
+		},
+		{
+			"showID": "angus",
+			"dataStart": "3:00 PM",
+			"dataEnd": "4:00 PM",
+			"eventName": "asdfa",
+			"djName": "Dan Schmeier",
+			"description": "Two Queens on Casino Night",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=735#here"
+			}
+		},
+		{
+			"showID": "annenbergradio",
+			"dataStart": "4:00 PM",
+			"dataEnd": "4:30 PM",
+			"eventName": "Annenberg Radio News",
+			"djName": "NEWS",
+			"description": "Student journalists at the Annenberg School for Communication and Journalism at the University of Southern California in Los Angeles, California produce audio stories aired on live broadcasts Tuesdays and Thursdays at 4 PM Pacific.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "http://www.uscannenbergmedia.com/listen/"
+			}
+		},
+		{
+			"showID": "midafternoon",
+			"dataStart": "4:30 PM",
+			"dataEnd": "5:00 PM",
+			"eventName": "The Mid-Afternoon Show",
+			"djName": "Madame Psychosis",
+			"description": "Political Comedy And Wacky Headlines It's Practically The News Anyway!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=563#here"
+			}
+		},
+		{
+			"showID": "areyougonnaeatthat",
+			"dataStart": "5:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "are you gonna eat that",
+			"djName": "DJ V",
+			"description": "Just trying to make your brain bigger and your mouth water",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=390#here"
+			}
+		},
+		{
+			"showID": "psychonautical",
+			"dataStart": "6:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "The Pyschonautical Playground",
+			"djName": "StripedBeatle",
+			"description": "“It’s all in the mind, you know?”",
+			"media": {
+				"facebook": "https://www.facebook.com/ThePsychonauticalPlayground",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=234#here"
+			}
+		},
+		{
+			"showID": "down2mars",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "Down 2 Mars",
+			"djName": "Lil Yeti and Llicey",
+			"description": "Best songs brought to you each week by two real Down 2 Mars girls.",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/down2marsgirls/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=552#here"
+			}
+		},
+		{
+			"showID": "mothership",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "The Mothership",
+			"djName": "DJ DadCap",
+			"description": "Get abducted by The Mothership every Tuesday at 9PM.",
+			"media": {
+				"facebook": "https://www.facebook.com/TheMothership63/",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=366#here"
+			}
+		},
+		{
+			"showID": "weaponsfm",
+			"dataStart": "10:00 PM",
+			"dataEnd": "12:00 AM",
+			"eventName": "WEAPONS FM",
+			"djName": "ARCTIC",
+			"description": "WEAPONS FM DONT TOUCH THAT DIAL",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=134#here"
+			}
+		}
+	]	
+}

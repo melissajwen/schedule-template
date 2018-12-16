@@ -1,0 +1,298 @@
+{
+	"showSchedule": [
+		{
+			"showID": "girlzwithgrillz",
+			"dataStart": "12:00 AM",
+			"dataEnd": "1:00 AM",
+			"eventName": "girlz with grillz",
+			"djName": "DJ MozzStix",
+			"description": "music from some of hip-hop's biggest baddies",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=292#here"
+			}
+		},
+		{
+			"showID": "therotation",
+			"dataStart": "1:00 AM",
+			"dataEnd": "2:00 AM",
+			"eventName": "The Rotation",
+			"djName": "Larry Hams",
+			"description": "DJ Larry hams soothes the soul with an after-hours mix of hip hop and r&b",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=679#here"
+			}
+		},
+		{
+			"showID": "femmefatals",
+			"dataStart": "2:00 AM",
+			"dataEnd": "3:00 AM",
+			"eventName": "Femme Fatals",
+			"djName": "DJ Mosh",
+			"description": "Weekly Doses of Humor From Everyone's Favorite Gender",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=889#here"
+			}
+		},
+		{
+			"showID": "sweettalk",
+			"dataStart": "3:00 AM",
+			"dataEnd": "4:00 AM",
+			"eventName": "Sweet Talk",
+			"djName": "DJ Kiana",
+			"description": "rockin tunes and talk with DJ Kiana",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=915#here"
+			}
+		},
+		{
+			"showID": "themove",
+			"dataStart": "7:00 AM",
+			"dataEnd": "8:00 AM",
+			"eventName": "The Move",
+			"djName": "dj fiona",
+			"description": "indie-alternative tracks inspired by real, big feelings",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=836#here"
+			}
+	    }, 
+		{
+			"showID": "thelyrictherapyhour",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "The Lyric Therapy Hour",
+			"djName": "TheLyricTherapist",
+			"description": "Sharing Lyrics & Advice to Help Us Through Life",
+			"media": {
+				"facebook": "https://www.facebook.com/TheLyricTherapist-329088487167117/",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=723#here"
+			}
+		},
+		{
+			"showID": "launicamusica",
+			"dataStart": "9:00 AM",
+			"dataEnd": "10:00 AM",
+			"eventName": "La Unica Musica",
+			"djName": "DJ mira",
+			"description": "Bops by artists of color coming to you every week!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=760#here"
+			}
+		},
+		{
+			"showID": "thelab",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "The Lab",
+			"djName": "Barbara",
+			"description": "New genres and different music each week",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=857#here"
+			}
+		},
+		{
+			"showID": "soitgoes",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "So It Goes...",
+			"djName": "Madame Psychosis",
+			"description": "Books That Have Been Turned Into Movies And TV Shows, Yes Please!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=563#here"
+			}
+		},
+		{
+			"showID": "mellowgold",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "M E L L O W G O L D",
+			"djName": "DJ Elon",
+			"description": "Sophisticated Dads Reminiscing",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=452#here"
+			}
+		},
+		{
+			"showID": "allnightallright",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "All Night All Right",
+			"djName": "Phosphene",
+			"description": "All Right Music All Night Long",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/phosphene___/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=417#here"
+			}
+		},
+		{
+			"showID": "icecreamantisocial",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "Ice Cream Antisocial",
+			"djName": "Ex-Teen & Satanic Mother and Satanic Mother with Jax Axle, Zesaladin, Chasing Dragons, & Sonny Barger",
+			"description": "Only The Chillest of Jams, Scooped Up By DJ Satanic Mother & DJ Ex-Teen",
+			"media": {
+				"facebook": "https://www.facebook.com/KXSCicecreamantisocial",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=241#here"
+			}
+		},
+		{
+			"showID": "mysterytime",
+			"dataStart": "3:00 PM",
+			"dataEnd": "4:00 PM",
+			"eventName": "mystery time",
+			"djName": "DJ ¯\\_(ツ)_/¯",
+			"description": "the best and most mysterious of all radio shows.",
+			"media": {
+				"facebook": "https://www.facebook.com/mysterytimeshh",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=298#here"
+			}
+		},
+		{
+			"showID": "texulous",
+			"dataStart": "4:00 PM",
+			"dataEnd": "5:00 PM",
+			"eventName": "Texulous Talk Show",
+			"djName": "Adam Ait",
+			"description": "Scintillating, Squaminous",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=931#here"
+			}
+		},
+		{
+			"showID": "artofspaceradio",
+			"dataStart": "5:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "Art of Space Radio",
+			"djName": "swanbird",
+			"description": "Resistance through artistic expression.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=708#here"
+			}
+		},
+		{
+			"showID": "nina",
+			"dataStart": "6:00 PM",
+			"dataEnd": "7:00 PM",
+			"eventName": "Nina in a Haystack",
+			"djName": "DJ Pollux",
+			"description": "Mixing Unique Finds Across Genres Every Week",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=780#here"
+			}
+		},
+		{
+			"showID": "sadboys",
+			"dataStart": "7:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "Sadboys LLC: The Land Before Time",
+			"djName": "Tim Horton",
+			"description": "Sad Boys discuss their favorite sad artists",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=557#here"
+			}
+		},
+		{
+			"showID": "latenight",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "Late Night A&R",
+			"djName": "Georgia Wolf",
+			"description": "New Beats with Late Night A&R",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=459#here"
+			}
+		},
+		{
+			"showID": "aword",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "a word",
+			"djName": "dj lady bird",
+			"description": "dj salve picks out music that matches with the word of the week. cause what starts out as a sound, ends in a deed.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=126#here"
+			}
+		},
+		{
+			"showID": "satanslair",
+			"dataStart": "10:00 PM",
+			"dataEnd": "11:00 PM",
+			"eventName": "Satan's Lair",
+			"djName": "DJ MadHam",
+			"description": "Satan's Lair forever beckons you to enter.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=281#here"
+			}
+		},
+		{
+			"showID": "pepes",
+			"dataStart": "11:00 PM",
+			"dataEnd": "12:00 AM",
+			"eventName": "Pepe's Playlist",
+			"djName": "DJ Liv and Kirby_Heat",
+			"description": "I am not a shrimp, I am a KING PRAWN OKAY !",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=28#here"
+			}
+		}
+	]	
+}

@@ -1,0 +1,284 @@
+{
+	"showSchedule": [
+		{
+			"showID": "drewcasper",
+			"dataStart": "12:00 AM",
+			"dataEnd": "1:00 AM",
+			"eventName": "The Drew Casper Power Hour",
+			"djName": "Anna Lobmeyer and DJ Elon Musk",
+			"description": "Indie Jams, Movie Debates, and Satanic Worship For the Depressed Film Student",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=748#here"
+			}
+		},
+		{
+			"showID": "quiubo",
+			"dataStart": "1:00 AM",
+			"dataEnd": "2:00 AM",
+			"eventName": "Quiubo pues?",
+			"djName": "Alana",
+			"description": "All you want to hear & more",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=479#here"
+			}
+		},
+		{
+			"showID": "2ruff",
+			"dataStart": "2:00 AM",
+			"dataEnd": "3:00 AM",
+			"eventName": "2 Ruff 4 Radio",
+			"djName": "DJ Dwight",
+			"description": "I can feel it coming in the air(waves) tonight",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=787#here"
+			}
+		},
+		{
+			"showID": "sleepytimetunes",
+			"dataStart": "6:00 AM",
+			"dataEnd": "7:00 AM",
+			"eventName": "Sleepy Time Tunes",
+			"djName": "DJ Meli",
+			"description": "Chill Tracks Weekly with DJ meli",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=906#here"
+			}
+		},
+		{
+			"showID": "groovytunes",
+			"dataStart": "7:00 AM",
+			"dataEnd": "8:00 AM",
+			"eventName": "Groovy Tunes and Good Moods",
+			"djName": "Meg",
+			"description": "Tunes That You Won't Hear Twice by Meg",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=903#here"
+			}
+	    }, 
+		{
+			"showID": "asmhour",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "The ASMHour",
+			"djName": "DJ Snacks from Home and DJ Damien Worst",
+			"description": "Sit back, relax, and tingle",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=851#here"
+			}
+		},
+		{
+			"showID": "magichour",
+			"dataStart": "9:00 AM",
+			"dataEnd": "10:00 AM",
+			"eventName": "Magic Hour",
+			"djName": "Clare",
+			"description": "Listen to Magic Hour with a candle burning and you will see your entire future",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=856#here"
+			}
+		},
+		{
+			"showID": "questionable",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "Questionable.",
+			"djName": "Miranda Myers",
+			"description": "You never know what you're gonna get.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=863#here"
+			}
+		},
+		{
+			"showID": "buenas",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "buenas vibraciones",
+			"djName": "dj polareis",
+			"description": "make sure you look both ways before crossing memory lane!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=870#here"
+			}
+		},
+		{
+			"showID": "forecast",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "The Forecast",
+			"djName": "DJ Weathaman",
+			"description": "Predicting the hottest new music every week",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/theweathaman/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=847#here"
+			}
+		},
+		{
+			"showID": "interdisciplinary",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "interdisciplinary information",
+			"djName": "LIVIA",
+			"description": "an intriguing aural journey with some insightful conversation sprinkled in",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=569#here"
+			}
+		},
+		{
+			"showID": "collegecollage",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "The College Collage",
+			"djName": "The Empress",
+			"description": "Allow The Empress to impress you...",
+			"media": {
+				"facebook": "https://www.facebook.com/The-College-Collage-on-KXSC-491991987827467/",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=597#here"
+			}
+		},
+		{
+			"showID": "kirby",
+			"dataStart": "3:00 PM",
+			"dataEnd": "4:00 PM",
+			"eventName": "Kirby's Air Ride",
+			"djName": "Kirby_Heat",
+			"description": "Ride the airwaves",
+			"media": {
+				"facebook": "https://twitter.com/KirbyHeat",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=287#here"
+			}
+		},
+		{
+			"showID": "annenbergradio",
+			"dataStart": "4:00 PM",
+			"dataEnd": "4:30 PM",
+			"eventName": "Annenberg Radio News",
+			"djName": "NEWS",
+			"description": "Student journalists at the Annenberg School for Communication and Journalism at the University of Southern California in Los Angeles, California produce audio stories aired on live broadcasts Tuesdays and Thursdays at 4 PM Pacific.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "http://www.uscannenbergmedia.com/listen/"
+			}
+		},
+		{
+			"showID": "synthaesthetic",
+			"dataStart": "5:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "Synth Aesthetic",
+			"djName": "MLSA",
+			"description": "All things electronic !",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=747#here"
+			}
+		},
+		{
+			"showID": "bear",
+			"dataStart": "6:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "The Bear's Den",
+			"djName": "The Bear",
+			"description": "New Bands, Old Bands, Punk Bands! (and others) every show",
+			"media": {
+				"facebook": "https://www.facebook.com/thebearsdenonkxsc",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=16#here"
+			}
+		},
+		{
+			"showID": "undertheinfluence",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "Under the Influence",
+			"djName": "Alison Wood",
+			"description": "Great artists and the influences who started it all!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=652#here"
+			}
+		},
+		{
+			"showID": "getjiggy",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "Get Jiggy",
+			"djName": "Luna and Blu",
+			"description": "Sweet tunes coming at ya live from your fave astronomical bodies. Listen to the BEST with the BEST. Get jiggy with Luna and DJ Blue to find new toonage",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=612#here"
+			}
+		},
+		{
+			"showID": "ihavetime",
+			"dataStart": "10:00 PM",
+			"dataEnd": "11:00 PM",
+			"eventName": "I Have Time",
+			"djName": "DJ pay-per-jam",
+			"description": "From acing tests to making copies--playing music for the late night studier to the office contrarian",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=110#here"
+			}
+		},
+		{
+			"showID": "thewavelength",
+			"dataStart": "11:00 PM",
+			"dataEnd": "12:00 AM",
+			"eventName": "The Wavelength",
+			"djName": "Lil Gog",
+			"description": "Radio Waves of Good Vibrations",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=468#here"
+			}
+		}
+	]	
+}

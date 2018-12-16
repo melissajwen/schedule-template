@@ -1,0 +1,242 @@
+{
+	"showSchedule": [
+		{
+			"showID": "rootscanal",
+			"dataStart": "12:00 AM",
+			"dataEnd": "1:00 AM",
+			"eventName": "Roots Canal",
+			"djName": "DJ I'm Sorry",
+			"description": "It's time for your weekly appointment with DJ Aural Hygiene. Let's just say I hope you flossed.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=446"
+			}
+		},
+		{
+			"showID": "biggayradiohour",
+			"dataStart": "1:00 AM",
+			"dataEnd": "2:00 AM",
+			"eventName": "The Big Gay Radio Hour",
+			"djName": "DJ Sus Van Sant",
+			"description": "It's Here, It's Queer, It's Music to Your Ears",
+			"media": {
+				"facebook": "https://www.facebook.com/gayxsc",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=772#here"
+			}
+		},
+		{
+			"showID": "slappers",
+			"dataStart": "2:00 AM",
+			"dataEnd": "3:00 AM",
+			"eventName": "Slappers of the Week",
+			"djName": "Nick Schlegel",
+			"description": "Slappers Mixed by yours truly <3",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=813#here"
+			}
+		},
+		{
+			"showID": "thelatespring",
+			"dataStart": "7:00 AM",
+			"dataEnd": "8:00 AM",
+			"eventName": "The Late Spring",
+			"djName": "DJ 8mitsu",
+			"description": "Spinning Your Favorite Tunes From Your Favorite Yellow Artists Presented By DJ hachimitsu",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": ""
+			}
+	    }, 
+		{
+			"showID": "xyz",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "the xyz room hours III",
+			"djName": "Frums",
+			"description": "Sample Experiential Audio From Coast To Coast With Frums",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=521#here"
+			}
+		},
+		{
+			"showID": "corporate",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "Corporate Finance Show",
+			"djName": "chris christi",
+			"description": "free max B",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "https://soundcloud.com/chris-christi",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=350#here"
+			}
+		},
+		{
+			"showID": "sportshour",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "The Sports Hour",
+			"djName": "Sebastian McCrimmon",
+			"description": "Sports Talk Show",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=588#here"
+			}
+		},
+		{
+			"showID": "poshshow",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "A Very Posh Show",
+			"djName": "Pasha",
+			"description": "Your weekly update on everything going on in the NBA.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=356#here"
+			}
+		},
+		{
+			"showID": "@home",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "@home",
+			"djName": "DJ Laske",
+			"description": "Listen to music I like and I'll talk about it sometimes",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=414#here"
+			}
+		},
+		{
+			"showID": "homeofhouse",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "The Home of House",
+			"djName": "KX",
+			"description": "New, Fresh Dance Music mixed by KX",
+			"media": {
+				"facebook": "https://www.facebook.com/MusicByKX",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=777#here"
+			}
+		},
+		{
+			"showID": "indiecision",
+			"dataStart": "3:00 PM",
+			"dataEnd": "5:00 PM",
+			"eventName": "Indie-Cision",
+			"djName": "Meeks",
+			"description": "An eclectic mix of indie and classics by your favorite indecisive DJ Meeks.",
+			"media": {
+				"facebook": "https://www.facebook.com/indiewdjmeeks/",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=580#here"
+			}
+		},
+		{
+			"showID": "radiosomewhere",
+			"dataStart": "5:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "Radio Somewhere",
+			"djName": "DJ/MJ",
+			"description": "Sundry surveys of sounds and scenes from sea to shining sea.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=615#here"
+			}
+		},
+		{
+			"showID": "procedurallygenerateddisaster",
+			"dataStart": "6:00 PM",
+			"dataEnd": "7:00 PM",
+			"eventName": "Procedurally Generated Disaster",
+			"djName": "DJ Milk Steak",
+			"description": "A nice mix of sick tunes and cool games",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=753#here"
+			}
+		},
+		{
+			"showID": "ultimatehealthydose",
+			"dataStart": "7:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "The Ultimate Healthy Dose",
+			"djName": "JT Tomlinson",
+			"description": "Just Crushed a Salad. Let's Do This.",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=360#here"
+			}
+		},
+		{
+			"showID": "tripleh",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "Triple H",
+			"djName": "DJ ndab",
+			"description": "Wikki Wikki with dj ndab",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=826#here"
+			}
+		},
+		{
+			"showID": "thesofa",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "The Sofa",
+			"djName": "DJ Dim Sum",
+			"description": "handpicking only the tastiest aggressive and hardcore electro beatz",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=784#here"
+			}
+		},
+		{
+			"showID": "bigantradio",
+			"dataStart": "10:00 PM",
+			"dataEnd": "11:00 PM",
+			"eventName": "BigAnt Radio",
+			"djName": "Anthony Yin",
+			"description": "",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=799#here"
+			}
+		}
+	]	
+}

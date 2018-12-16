@@ -1,0 +1,284 @@
+{
+	"showSchedule": [
+		{
+			"showID": "jellies",
+			"dataStart": "12:00 AM",
+			"dataEnd": "1:00 AM",
+			"eventName": "Jellies & Jams",
+			"djName": "DJ Yeep",
+			"description": "Serving up the jamiest jellies and the jelliest jams this side of the Mississippi",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=795#here"
+			}
+		},
+		{
+			"showID": "outofyourgourd",
+			"dataStart": "1:00 AM",
+			"dataEnd": "2:00 AM",
+			"eventName": "Out of Your Gourd",
+			"djName": "DJ Refried Beans",
+			"description": "Music and conversation from people you'll never know",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=637#here"
+			}
+		},
+		{
+			"showID": "sowhat",
+			"dataStart": "2:00 AM",
+			"dataEnd": "3:00 AM",
+			"eventName": "So What'd You Think?",
+			"djName": "DJ 20Nugs",
+			"description": "Me and a friend reacting to a movie we chose... LIVE!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=921#here"
+			}
+		},
+		{
+			"showID": "fuzz",
+			"dataStart": "7:00 AM",
+			"dataEnd": "8:00 AM",
+			"eventName": "fuzz",
+			"djName": "yung cytoplasm",
+			"description": "Why everything sounds the same",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/fuzz.01/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=888#here"
+			}
+	    }, 
+		{
+			"showID": "thetea",
+			"dataStart": "8:00 AM",
+			"dataEnd": "9:00 AM",
+			"eventName": "The Tea",
+			"djName": "DJ Sammybeeb",
+			"description": "Tunes To Drink Tea To",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=897#here"
+			}
+		},
+		{
+			"showID": "steelydan",
+			"dataStart": "9:00 AM",
+			"dataEnd": "10:00 AM",
+			"eventName": "Steely Dan Fan Club",
+			"djName": "DJ nasty woman",
+			"description": "A Smooth, Smooth Ride Down the Rock River with DJ Nasty Woman",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=781#here"
+			}
+		},
+		{
+			"showID": "heatcheck",
+			"dataStart": "10:00 AM",
+			"dataEnd": "11:00 AM",
+			"eventName": "Heat Check",
+			"djName": "Andy Gabler",
+			"description": "The Incessant Arguing of Two Degenerate Sports Fans",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=512#here"
+			}
+		},
+		{
+			"showID": "sportsstampede",
+			"dataStart": "11:00 AM",
+			"dataEnd": "12:00 PM",
+			"eventName": "Sports Stampede",
+			"djName": "Aaron Glazer",
+			"description": "Giving the Dose of Sports Talk You Need",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=924#here"
+			}
+		},
+		{
+			"showID": "discover",
+			"dataStart": "12:00 PM",
+			"dataEnd": "1:00 PM",
+			"eventName": "Discover Weekly",
+			"djName": "Connor Wilson",
+			"description": "Updated every Wednesday, so save your favorites!",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=802#here"
+			}
+		},
+		{
+			"showID": "bside",
+			"dataStart": "1:00 PM",
+			"dataEnd": "2:00 PM",
+			"eventName": "B side",
+			"djName": "B-side",
+			"description": "get hip on detroit",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=313#here"
+			}
+		},
+		{
+			"showID": "summerofgeorge",
+			"dataStart": "2:00 PM",
+			"dataEnd": "3:00 PM",
+			"eventName": "The Summer of George",
+			"djName": "DJ Costanza",
+			"description": "Tunes Just As Good As An Eclair From The Garbage",
+			"media": {
+				"facebook": "https://twitter.com/dj_costanza",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=874#here"
+			}
+		},
+		{
+			"showID": "backbeats",
+			"dataStart": "3:00 PM",
+			"dataEnd": "4:00 PM",
+			"eventName": "Back Beats",
+			"djName": "DJ Lola",
+			"description": "Differing artists that have songs that share the same thing with some background and fun facts every week by DJ Lola",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=936#here"
+			}
+		},
+		{
+			"showID": "vampire",
+			"dataStart": "4:00 PM",
+			"dataEnd": "5:00 PM",
+			"eventName": "Vampire Weekend at Bernie's",
+			"djName": "DJ Sinai",
+			"description": "Alternative Rock Meets Socialist Vermont Senator Meets Mediocre 80's Movie",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=910#here"
+			}
+		},
+		{
+			"showID": "robottears",
+			"dataStart": "5:00 PM",
+			"dataEnd": "6:00 PM",
+			"eventName": "robot tears",
+			"djName": "Nico-tine",
+			"description": "i spilled water on the mixer this is what it sounds like",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=783#here"
+			}
+		},
+		{
+			"showID": "meshes",
+			"dataStart": "6:00 PM",
+			"dataEnd": "7:00 PM",
+			"eventName": "Meshes of the Afternoon",
+			"djName": "Veronica",
+			"description": "Psychedelic tunes that'll make your pops nostalgic for the time before your conception",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=353#here"
+			}
+		},
+		{
+			"showID": "limbo",
+			"dataStart": "7:00 PM",
+			"dataEnd": "8:00 PM",
+			"eventName": "Limbo",
+			"djName": "Benji Sound",
+			"description": "Setting the bar",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=410#here"
+			}
+		},
+		{
+			"showID": "howwas",
+			"dataStart": "8:00 PM",
+			"dataEnd": "9:00 PM",
+			"eventName": "How Was Your Day?",
+			"djName": "Raj R. Rabbit and dj @uncle_tash",
+			"description": "Let's Talk About It Babe, We're Here to Listen",
+			"media": {
+				"facebook": "https://www.facebook.com/KXSCgoontown/",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=240#here"
+			}
+		},
+		{
+			"showID": "megabus",
+			"dataStart": "9:00 PM",
+			"dataEnd": "10:00 PM",
+			"eventName": "Megabus Blues",
+			"djName": "DJ Distant Girlfriend",
+			"description": "Moody bops for broody babes",
+			"media": {
+				"facebook": "",
+				"instagram": "https://www.instagram.com/rennieys/",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=381#here"
+			}
+		},
+		{
+			"showID": "ghoulschool",
+			"dataStart": "10:00 PM",
+			"dataEnd": "11:00 PM",
+			"eventName": "Ghoul School",
+			"djName": "DJ Mama and DJ Snacks from Home",
+			"description": "Paranormal stories and spooky content galore !",
+			"media": {
+				"facebook": "",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=545#here"
+			}
+		},
+		{
+			"showID": "hottub",
+			"dataStart": "11:00 PM",
+			"dataEnd": "12:00 AM",
+			"eventName": "Hot Tub Time Machine",
+			"djName": "fuhteems",
+			"description": "kick back with some throwbacks every week with dj fuhteems",
+			"media": {
+				"facebook": "https://www.facebook.com/httmkxsc/?modal=admin_todo_tour",
+				"instagram": "",
+				"soundcloud": "",
+				"spinitron": "https://spinitron.com/radio/playlist.php?station=kxsc&djuid=841#here"
+			}
+		}
+	]	
+}
