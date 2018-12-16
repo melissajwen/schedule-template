@@ -1,0 +1,2953 @@
+<!-- modified from https://codyhouse.co/gem/schedule-template/ -->
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KXSC Summer 2018 Programming Schedule</title>
+
+	<style>
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		/* HTML5 display-role reset for older browsers */
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section,
+		main {
+			display: block;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		ol,
+		ul {
+			list-style: none;
+		}
+
+		blockquote,
+		q {
+			quotes: none;
+		}
+
+		blockquote:before,
+		blockquote:after,
+		q:before,
+		q:after {
+			content: '';
+			content: none;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		*,
+		*::after,
+		*::before {
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 62.5%;
+		}
+
+		body {
+			font-size: 1.6rem;
+			font-family: "Source Sans Pro", sans-serif;
+			color: #222222;
+			background-color: black;
+		}
+
+		a {
+			color: #80f0ad;
+			text-decoration: none;
+		}
+
+		.cd-schedule {
+			position: relative;
+			margin: 2em 0;
+		}
+
+		.cd-schedule::before {
+			/* never visible - this is used in js to check the current MQ */
+			content: 'mobile';
+			display: none;
+		}
+
+		@media only screen and (min-width: 800px) {
+			.cd-schedule {
+				width: 90%;
+				max-width: 1400px;
+				margin: 2em auto;
+			}
+
+			.cd-schedule::after {
+				clear: both;
+				content: "";
+				display: block;
+			}
+
+			.cd-schedule::before {
+				content: 'desktop';
+			}
+		}
+
+		.cd-schedule .timeline {
+			display: none;
+		}
+
+		@media only screen and (min-width: 800px) {
+			.cd-schedule .timeline {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				padding-top: 50px;
+			}
+
+			.cd-schedule .timeline li {
+				position: relative;
+				height: 50px;
+				margin-right: 50px;
+			}
+
+			.cd-schedule .timeline li::after {
+				/* this is used to create the table horizontal lines */
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 120%;
+				height: 1px;
+				background: darkgrey;
+			}
+
+			.cd-schedule .timeline li:last-of-type::after {
+				display: none;
+			}
+
+			/* .cd-schedule .timeline li:2nd-last-of-type::after {
+		    display: none;
+		  } */
+			/* get rid of second last line */
+			.cd-schedule .timeline li span {
+				display: none;
+				color: white;
+				width: 50px;
+			}
+		}
+
+		@media only screen and (min-width: 1000px) {
+			.cd-schedule .timeline li::after {
+				width: calc(100% - 13px);
+				left: 60px;
+			}
+
+			.cd-schedule .timeline li span {
+				display: inline-block;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+
+			.cd-schedule .timeline li:nth-of-type(2n) span {
+				display: none;
+			}
+		}
+
+		.cd-schedule .events {
+			position: relative;
+			z-index: 1;
+		}
+
+		.cd-schedule .events .events-group {
+			margin-bottom: 30px;
+		}
+
+		.cd-schedule .events .top-info {
+			width: 100%;
+			padding: 0 5%;
+			color: white;
+		}
+
+		.cd-schedule .events .top-info>span {
+			display: inline-block;
+			line-height: 1.2;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		.cd-schedule .events .events-group>ul {
+			position: relative;
+			padding: 0 5%;
+			/* force its children to stay on one line */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			overflow-x: scroll;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.cd-schedule .events .events-group>ul::after {
+			/* never visible - used to add a right padding to .events-group > ul */
+			display: inline-block;
+			content: '-';
+			width: 1px;
+			height: 100%;
+			opacity: 0;
+			color: transparent;
+		}
+
+		.cd-schedule .events .single-event {
+			/* force them to stay on one line */
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+			float: left;
+			height: 150px;
+			width: 70%;
+			max-width: 300px;
+			box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+			margin-right: 20px;
+			-webkit-transition: opacity .2s, background .2s;
+			transition: opacity .2s, background .2s;
+		}
+
+		.cd-schedule .events .single-event:last-of-type {
+			margin-right: 5%;
+		}
+
+		.cd-schedule .events .single-event a {
+			display: block;
+			height: 100%;
+			padding: 1.8em;
+		}
+
+		@media only screen and (min-width: 550px) {
+			.cd-schedule .events .single-event {
+				width: 40%;
+			}
+		}
+
+		@media only screen and (min-width: 800px) {
+			.cd-schedule .events {
+				float: left;
+				width: 100%;
+			}
+
+			.cd-schedule .events .events-group {
+				width: 14.25%;
+				float: left;
+				border: 1px solid darkgrey;
+				/* reset style */
+				margin-bottom: 0;
+			}
+
+			.cd-schedule .events .events-group:not(:first-of-type) {
+				border-left-width: 0;
+			}
+
+			.cd-schedule .events .top-info {
+				/* vertically center its content */
+				display: table;
+				height: 50px;
+				border-bottom: 1px solid darkgrey;
+				/* reset style */
+				padding: 0;
+			}
+
+			.cd-schedule .events .top-info>span {
+				/* vertically center inside its parent */
+				display: table-cell;
+				vertical-align: middle;
+				padding: 0 .5em;
+				text-align: center;
+				/* reset style */
+				font-weight: normal;
+				margin-bottom: 0;
+			}
+
+			.cd-schedule .events .events-group>ul {
+				height: 2400px;
+				/* reset style */
+				display: block;
+				overflow: visible;
+				padding: 0;
+			}
+
+			.cd-schedule .events .events-group>ul::after {
+				clear: both;
+				content: "";
+				display: block;
+			}
+
+			.cd-schedule .events .events-group>ul::after {
+				/* reset style */
+				display: none;
+			}
+
+			.cd-schedule .events .single-event {
+				position: absolute;
+				z-index: 3;
+				/* top position and height will be set using js */
+				width: calc(100% + 2px);
+				left: -1px;
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+				/* reset style */
+				-ms-flex-negative: 1;
+				flex-shrink: 1;
+				height: auto;
+				max-width: none;
+				margin-right: 0;
+			}
+
+			.cd-schedule .events .single-event a {
+				padding: 1.2em;
+			}
+
+			.cd-schedule .events .single-event:last-of-type {
+				/* reset style */
+				margin-right: 0;
+			}
+
+			.cd-schedule .events .single-event.selected-event {
+				/* the .selected-event class is added when an user select the event */
+				visibility: hidden;
+			}
+		}
+
+		@media only screen and (min-width: 1000px) {
+			.cd-schedule .events {
+				/* 60px is the .timeline element width */
+				width: calc(100% - 60px);
+				margin-left: 60px;
+			}
+		}
+
+		.cd-schedule.loading .events .single-event {
+			/* the class .loading is added by default to the .cd-schedule element
+			   it is removed as soon as the single events are placed in the schedule plan (using javascript) */
+			opacity: 0;
+		}
+
+		.cd-schedule .event-name,
+		.cd-schedule .event-date {
+			display: block;
+			color: white;
+			font-weight: bold;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			line-height: 1;
+		}
+
+		.cd-schedule .event-name {
+			font-size: 2.4rem;
+		}
+
+		@media only screen and (min-width: 800px) {
+			.cd-schedule .event-name {
+				font-size: 1.5rem;
+			}
+		}
+
+		.cd-schedule .event-date {
+			/* they are not included in the the HTML but added using JavScript */
+			font-size: 1.1rem;
+			opacity: .7;
+			line-height: 1.2;
+			margin-bottom: .2em;
+		}
+
+		.cd-schedule .dj-name {
+			/* they are not included in the the HTML but added using JavScript */
+			font-size: 1.1rem;
+			line-height: 0;
+			margin-bottom: 0em;
+			line-height: 0;
+			color: white;
+			opacity: 0.9;
+			font-style: italic;
+			letter-spacing: 0.2px;
+		}
+
+		.cd-schedule .single-event[data-event="event"],
+		.cd-schedule [data-event="event"] .header-bg {
+			/* this is used to set a background color for the event and the modal window */
+			background: #2eba81;
+		}
+
+		.cd-schedule .single-event[data-event="event"]:hover {
+			background: #0e9f64;
+		}
+
+
+		.cd-schedule .event-modal {
+			position: fixed;
+			z-index: 3;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			visibility: hidden;
+			/* Force Hardware acceleration */
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-transform: translateX(100%);
+			-ms-transform: translateX(100%);
+			transform: translateX(100%);
+			-webkit-transition: visibility .4s, -webkit-transform .4s;
+			transition: visibility .4s, -webkit-transform .4s;
+			transition: transform .4s, visibility .4s;
+			transition: transform .4s, visibility .4s, -webkit-transform .4s;
+			-webkit-transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+			transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+		}
+
+		.cd-schedule .event-modal .header {
+			position: relative;
+			height: 70px;
+			/* vertically center its content */
+			display: table;
+			width: 100%;
+		}
+
+		.cd-schedule .event-modal .header .content {
+			position: relative;
+			z-index: 3;
+			/* vertically center inside its parent */
+			display: table-cell;
+			vertical-align: middle;
+			padding: .6em 5%;
+		}
+
+		.cd-schedule .event-modal .body {
+			position: relative;
+			width: 100%;
+			/* 70px is the .header height */
+			height: calc(100% - 70px);
+		}
+
+		.cd-schedule .event-modal .event-info {
+			position: relative;
+			z-index: 2;
+			line-height: 1.4;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.cd-schedule .event-modal .event-info>div {
+			overflow: auto;
+			height: 100%;
+			padding: 1.4em 5%;
+		}
+
+		.cd-schedule .event-modal .header-bg,
+		.cd-schedule .event-modal .body-bg {
+			/* these are the morphing backgrounds - visible on desktop only */
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		.cd-schedule .event-modal .body-bg {
+			z-index: 1;
+			background: white;
+			-webkit-transform-origin: top left;
+			-ms-transform-origin: top left;
+			transform-origin: top left;
+		}
+
+		.cd-schedule .event-modal .header-bg {
+			z-index: 2;
+			-webkit-transform-origin: top center;
+			-ms-transform-origin: top center;
+			transform-origin: top center;
+		}
+
+		.cd-schedule .event-modal .close {
+			/* this is the 'X' icon */
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 3;
+			background: rgba(255, 255, 255, 0.1);
+			/* replace text with icon */
+			color: transparent;
+			white-space: nowrap;
+			text-indent: 100%;
+			height: 70px;
+			width: 70px;
+		}
+
+		.cd-schedule .event-modal .close::before,
+		.cd-schedule .event-modal .close::after {
+			/* these are the two lines of the 'X' icon */
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 2px;
+			height: 22px;
+			background: white;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.cd-schedule .event-modal .close::before {
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		}
+
+		.cd-schedule .event-modal .close::after {
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+			-ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+			transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+		}
+
+		.cd-schedule .event-modal .event-date {
+			display: none;
+		}
+
+		.cd-schedule .event-modal.no-transition {
+			-webkit-transition: none;
+			transition: none;
+		}
+
+		.cd-schedule .event-modal.no-transition .header-bg,
+		.cd-schedule .event-modal.no-transition .body-bg {
+			-webkit-transition: none;
+			transition: none;
+		}
+
+		@media only screen and (min-width: 800px) {
+			.cd-schedule .event-modal {
+				/* reset style */
+				right: auto;
+				width: auto;
+				height: auto;
+				-webkit-transform: translateX(0);
+				-ms-transform: translateX(0);
+				transform: translateX(0);
+				will-change: transform, width, height;
+				-webkit-transition: height .4s, width .4s, visibility .4s, -webkit-transform .4s;
+				transition: height .4s, width .4s, visibility .4s, -webkit-transform .4s;
+				transition: height .4s, width .4s, transform .4s, visibility .4s;
+				transition: height .4s, width .4s, transform .4s, visibility .4s, -webkit-transform .4s;
+				-webkit-transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+				transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+			}
+
+			.cd-schedule .event-modal .header {
+				position: absolute;
+				display: block;
+				top: 0;
+				left: 0;
+				height: 100%;
+			}
+
+			.cd-schedule .event-modal .header .content {
+				/* reset style */
+				display: block;
+				padding: .8em;
+			}
+
+			.cd-schedule .event-modal .event-info>div {
+				padding: 2em 3em 2em 2em;
+			}
+
+			.cd-schedule .event-modal .body {
+				height: 100%;
+				width: auto;
+			}
+
+			.cd-schedule .event-modal .header-bg,
+			.cd-schedule .event-modal .body-bg {
+				/* Force Hardware acceleration */
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				will-change: transform;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+
+			.cd-schedule .event-modal .header-bg {
+				-webkit-transition: -webkit-transform .4s;
+				transition: -webkit-transform .4s;
+				transition: transform .4s;
+				transition: transform .4s, -webkit-transform .4s;
+				-webkit-transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+				transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+			}
+
+			.cd-schedule .event-modal .body-bg {
+				opacity: 0;
+				-webkit-transform: none;
+				-ms-transform: none;
+				transform: none;
+			}
+
+			.cd-schedule .event-modal .event-date {
+				display: block;
+			}
+
+			.cd-schedule .event-modal .close,
+			.cd-schedule .event-modal .event-info {
+				opacity: 0;
+			}
+
+			.cd-schedule .event-modal .close {
+				width: 40px;
+				height: 40px;
+				background: transparent;
+			}
+
+			.cd-schedule .event-modal .close::after,
+			.cd-schedule .event-modal .close::before {
+				background: #222222;
+				height: 16px;
+			}
+		}
+
+		@media only screen and (min-width: 1000px) {
+			.cd-schedule .event-modal .header .content {
+				padding: 1.2em;
+			}
+		}
+
+		.cd-schedule.modal-is-open .event-modal {
+			/* .modal-is-open class is added as soon as an event is selected */
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			visibility: visible;
+		}
+
+		.cd-schedule.modal-is-open .event-modal .event-info>div {
+			/* smooth scroll on iOS touch devices */
+			-webkit-overflow-scrolling: touch;
+		}
+
+		@media only screen and (min-width: 800px) {
+
+			.cd-schedule.animation-completed .event-modal .close,
+			.cd-schedule.content-loaded.animation-completed .event-modal .event-info {
+				/* 	the .animation-completed class is added when the modal animation is completed
+					the .content-loaded class is added when the modal content has been loaded (using ajax) */
+				opacity: 1;
+				/*-webkit-transition: opacity .2s;*/
+				/*transition: opacity .2s;*/
+			}
+
+			.cd-schedule.modal-is-open .body-bg {
+				opacity: 1;
+				-webkit-transition: -webkit-transform .4s;
+				transition: -webkit-transform .4s;
+				transition: transform .4s;
+				transition: transform .4s, -webkit-transform .4s;
+				-webkit-transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+				transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+			}
+		}
+
+		.cd-schedule .cover-layer {
+			/* layer between the content and the modal window */
+			position: fixed;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			opacity: 0;
+			visibility: hidden;
+			-webkit-transition: opacity .4s, visibility .4s;
+			transition: opacity .4s, visibility .4s;
+		}
+
+		.cd-schedule.modal-is-open .cover-layer {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="cd-schedule loading">
+		<div class="timeline">
+			<ul>
+				<li>
+					<span>12:00 AM</span>
+				</li>
+				<li>
+					<span>12:30 AM</span>
+				</li>
+				<li>
+					<span>1:00 AM</span>
+				</li>
+				<li>
+					<span>1:30 AM</span>
+				</li>
+				<li>
+					<span>2:00 AM</span>
+				</li>
+				<li>
+					<span>2:30 AM</span>
+				</li>
+				<li>
+					<span>3:00 AM</span>
+				</li>
+				<li>
+					<span>3:30 AM</span>
+				</li>
+				<li>
+					<span>4:00 AM</span>
+				</li>
+				<li>
+					<span>4:30 AM</span>
+				</li>
+				<li>
+					<span>5:00 AM</span>
+				</li>
+				<li>
+					<span>5:30 AM</span>
+				</li>
+				<li>
+					<span>6:00 AM</span>
+				</li>
+				<li>
+					<span>6:30 AM</span>
+				</li>
+				<li>
+					<span>7:00 AM</span>
+				</li>
+				<li>
+					<span>7:30 AM</span>
+				</li>
+				<li>
+					<span>8:00 AM</span>
+				</li>
+				<li>
+					<span>8:30 AM</span>
+				</li>
+				<li>
+					<span>9:00 AM</span>
+				</li>
+				<li>
+					<span>9:30 AM</span>
+				</li>
+				<li>
+					<span>10:00 AM</span>
+				</li>
+				<li>
+					<span>10:30 AM</span>
+				</li>
+				<li>
+					<span>11:00 AM</span>
+				</li>
+				<li>
+					<span>11:30 AM</span>
+				</li>
+				<li>
+					<span>12:00 PM</span>
+				</li>
+				<li>
+					<span>12:30 PM</span>
+				</li>
+				<li>
+					<span>1:00 PM</span>
+				</li>
+				<li>
+					<span>1:30 PM</span>
+				</li>
+				<li>
+					<span>2:00 PM</span>
+				</li>
+				<li>
+					<span>2:30 PM</span>
+				</li>
+				<li>
+					<span>3:00 PM</span>
+				</li>
+				<li>
+					<span>3:30 PM</span>
+				</li>
+				<li>
+					<span>4:00 PM</span>
+				</li>
+				<li>
+					<span>4:30 PM</span>
+				</li>
+				<li>
+					<span>5:00 PM</span>
+				</li>
+				<li>
+					<span>5:30 PM</span>
+				</li>
+				<li>
+					<span>6:00 PM</span>
+				</li>
+				<li>
+					<span>6:30 PM</span>
+				</li>
+				<li>
+					<span>7:00 PM</span>
+				</li>
+				<li>
+					<span>7:30 PM</span>
+				</li>
+				<li>
+					<span>8:00 PM</span>
+				</li>
+				<li>
+					<span>8:30 PM</span>
+				</li>
+				<li>
+					<span>9:00 PM</span>
+				</li>
+				<li>
+					<span>9:30 PM</span>
+				</li>
+				<li>
+					<span>10:00 PM</span>
+				</li>
+				<li>
+					<span>10:30 PM</span>
+				</li>
+				<li>
+					<span>11:00 PM</span>
+				</li>
+				<li>
+					<span>11:30 PM</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="events">
+			<ul>
+				<!-- Sunday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Sunday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="thelatespring" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Late Spring</em>
+								<em class="dj-name">DJ 8mitsu</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="10:00 AM" data-content="xyz" data-event="event">
+							<a href="#0">
+								<em class="event-name">the xyz room hours III</em>
+								<em class="dj-name">Frums</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="corporate" data-event="event">
+							<a href="#0">
+								<em class="event-name">Corporate Finance Show</em>
+								<em class="dj-name">chris christi</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="sportshour" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Sports Hour</em>
+								<em class="dj-name">Sebastian McCrimmon</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="poshshow" data-event="event">
+							<a href="#0">
+								<em class="event-name">A Very Posh Show</em>
+								<em class="dj-name">Pasha</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="@home" data-event="event">
+							<a href="#0">
+								<em class="event-name">@home</em>
+								<em class="dj-name">DJ Laske</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="homeofhouse" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Home of House</em>
+								<em class="dj-name">KX</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="5:00 PM" data-content="indiecision" data-event="event">
+							<a href="#0">
+								<em class="event-name">Indie-Cision</em>
+								<em class="dj-name">Meeks</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="5:00 PM" data-end="6:00 PM" data-content="radiosomewhere" data-event="event">
+							<a href="#0">
+								<em class="event-name">Radio Somewhere</em>
+								<em class="dj-name">DJ/MJ</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="7:00 PM" data-content="procedurallygenerateddisaster"
+						 data-event="event">
+							<a href="#0">
+								<em class="event-name">Procedurally Generated Disaster</em>
+								<em class="dj-name">DJ Milk Steak</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 PM" data-end="8:00 PM" data-content="ultimatehealthydose" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Ultimate Healthy Dose</em>
+								<em class="dj-name">JT Tomlinson</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="tripleh" data-event="event">
+							<a href="#0">
+								<em class="event-name">Triple H</em>
+								<em class="dj-name">DJ ndab</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="thesofa" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Sofa</em>
+								<em class="dj-name">DJ Dim Sum</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="11:00 PM" data-content="bigantradio" data-event="event">
+							<a href="#0">
+								<em class="event-name">BigAnt Radio</em>
+								<em class="dj-name">Anthony Yin</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 PM" data-end="12:00 AM" data-content="bigantradio" data-event="event">
+							<a href="#0">
+								<em class="event-name">AudioBiography</em>
+								<em class="dj-name">DJ Comic Sans</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Monday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Monday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="12:00 AM" data-end="1:00 AM" data-content="rootscanal" data-event="event">
+							<a href="#0">
+								<em class="event-name">Roots Canal</em>
+								<em class="dj-name">DJ I'm Sorry</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 AM" data-end="2:00 AM" data-content="biggayradiohour" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Big Gay Radio Hour</em>
+								<em class="dj-name">DJ Sus Van Sant</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 AM" data-end="3:00 AM" data-content="slappers" data-event="event">
+							<a href="#0">
+								<em class="event-name">Slappers of the Week</em>
+								<em class="dj-name">Nick Schlegel</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="themove" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Move</em>
+								<em class="dj-name">dj fiona</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="9:00 AM" data-content="thelyrictherapyhour" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Lyric Therapy Hour</em>
+								<em class="dj-name">TheLyricTherapist</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 AM" data-end="10:00 AM" data-content="launicamusica" data-event="event">
+							<a href="#0">
+								<em class="event-name">La Unica Musica</em>
+								<em class="dj-name">DJ mira</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="thelab" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Lab</em>
+								<em class="dj-name">Barbara</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="soitgoes" data-event="event">
+							<a href="#0">
+								<em class="event-name">So It Goes...</em>
+								<em class="dj-name">Madame Psychosis</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="mellowgold" data-event="event">
+							<a href="#0">
+								<em class="event-name">M E L L O W G O L D</em>
+								<em class="dj-name">DJ Elon</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="allnightallright" data-event="event">
+							<a href="#0">
+								<em class="event-name">All Night All Right</em>
+								<em class="dj-name">Phosphene</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="icecreamantisocial" data-event="event">
+							<a href="#0">
+								<em class="event-name">Ice Cream Antisocial</em>
+								<em class="dj-name">Ex-Teen & Satanic Mother and Satanic Mother with Jax Axle, Zesaladin, Chasing Dragons, &
+									Sonny
+									Barger
+								</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="4:00 PM" data-content="mysterytime" data-event="event">
+							<a href="#0">
+								<em class="event-name">mystery time</em>
+								<em class="dj-name">DJ ¯\_(ツ)_/¯</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:00 PM" data-end="5:00 PM" data-content="texulous" data-event="event">
+							<a href="#0">
+								<em class="event-name">Texulous Talk Show</em>
+								<em class="dj-name">Adam Ait</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="5:00 PM" data-end="6:00 PM" data-content="artofspaceradio" data-event="event">
+							<a href="#0">
+								<em class="event-name">Art of Space Radio</em>
+								<em class="dj-name">swanbird</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="7:00 PM" data-content="nina" data-event="event">
+							<a href="#0">
+								<em class="event-name">Nina in a Haystack</em>
+								<em class="dj-name">DJ Pollux</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 PM" data-end="8:00 PM" data-content="sadboys" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sadboys LLC: The Land Before Time</em>
+								<em class="dj-name">Tim Horton</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="latenight" data-event="event">
+							<a href="#0">
+								<em class="event-name">Late Night A&R</em>
+								<em class="dj-name">Georgia Wolf</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="aword" data-event="event">
+							<a href="#0">
+								<em class="event-name">a word</em>
+								<em class="dj-name">dj lady bird</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="11:00 PM" data-content="satanslair" data-event="event">
+							<a href="#0">
+								<em class="event-name">Satan's Lair</em>
+								<em class="dj-name">DJ MadHam</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 PM" data-end="12:00 AM" data-content="pepes" data-event="event">
+							<a href="#0">
+								<em class="event-name">Pepe's Playlist</em>
+								<em class="dj-name">DJ Liv and Kirby_Heat</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Tuesday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Tuesday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="12:00 AM" data-end="1:00 AM" data-content="girlzwithgrillz" data-event="event">
+							<a href="#0">
+								<em class="event-name">girlz with grillz</em>
+								<em class="dj-name">DJ MozzStix</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 AM" data-end="2:00 AM" data-content="therotation" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Rotation</em>
+								<em class="dj-name">Larry Hams</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 AM" data-end="3:00 AM" data-content="femmefatals" data-event="event">
+							<a href="#0">
+								<em class="event-name">Femme Fatals</em>
+								<em class="dj-name">DJ Mosh</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 AM" data-end="7:00 AM" data-content="impicking" data-event="event">
+							<a href="#0">
+								<em class="event-name">I'm Picking the Music!</em>
+								<em class="dj-name">Edna Mode</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="billmurray" data-event="event">
+							<a href="#0">
+								<em class="event-name">Bill Murray's House</em>
+								<em class="dj-name">FLuke</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="9:00 AM" data-content="insidevoices" data-event="event">
+							<a href="#0">
+								<em class="event-name">Inside Voices</em>
+								<em class="dj-name">DJ Rat Villain</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 AM" data-end="10:00 AM" data-content="british" data-event="event">
+							<a href="#0">
+								<em class="event-name">Brit(ish) Invasion</em>
+								<em class="dj-name">DJ Britmin</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="bestofthefest" data-event="event">
+							<a href="#0">
+								<em class="event-name">best of the fest</em>
+								<em class="dj-name">J-ME</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="whatamiwatching" data-event="event">
+							<a href="#0">
+								<em class="event-name">What Am I Watching?</em>
+								<em class="dj-name">Jordyn Tyler</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="yadayada" data-event="event">
+							<a href="#0">
+								<em class="event-name">Yada Yada</em>
+								<em class="dj-name">DJ Saabs</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="gab" data-event="event">
+							<a href="#0">
+								<em class="event-name">Gab with Gab</em>
+								<em class="dj-name">Gabra Cadabra</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="bitcrush" data-event="event">
+							<a href="#0">
+								<em class="event-name">Bitcrush</em>
+								<em class="dj-name">DJ Nali</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="4:00 PM" data-content="angus" data-event="event">
+							<a href="#0">
+								<em class="event-name">asdfa</em>
+								<em class="dj-name">Dan Schmeier</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:00 PM" data-end="4:30 PM" data-content="annenbergradio" data-event="event">
+							<a href="#0">
+								<em class="event-name">Annenberg Radio News</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:30 PM" data-end="5:00 PM" data-content="midafternoon" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Mid-Afternoon Show</em>
+								<em class="dj-name">Madame Psychosis</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="5:00 PM" data-end="6:00 PM" data-content="areyougonnaeatthat" data-event="event">
+							<a href="#0">
+								<em class="event-name">are you gonna eat that</em>
+								<em class="dj-name">DJ V</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="8:00 PM" data-content="psychonautical" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Pyschonautical Playground</em>
+								<em class="dj-name">StripedBeatle</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="down2mars" data-event="event">
+							<a href="#0">
+								<em class="event-name">Down 2 Mars</em>
+								<em class="dj-name">Lil Yeti and Llicey</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="mothership" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Mothership</em>
+								<em class="dj-name">DJ DadCap</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="12:00 AM" data-content="weaponsfm" data-event="event">
+							<a href="#0">
+								<em class="event-name">WEAPONS FM</em>
+								<em class="dj-name">ARCTIC</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Wednesday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Wednesday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="12:00 AM" data-end="1:00 AM" data-content="firstimpressions" data-event="event">
+							<a href="#0">
+								<em class="event-name">First Impressions</em>
+								<em class="dj-name">DJ Kaleidoscope</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 AM" data-end="2:00 AM" data-content="aux" data-event="event">
+							<a href="#0">
+								<em class="event-name">if i had the AUX cord</em>
+								<em class="dj-name">babygurl</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 AM" data-end="3:00 AM" data-content="sleepysadboi" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sleepy Sadboi Lounge Hour</em>
+								<em class="dj-name">DJ Yane</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="fuzz" data-event="event">
+							<a href="#0">
+								<em class="event-name">fuzz</em>
+								<em class="dj-name">yung cytoplasm</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="9:00 AM" data-content="thetea" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Tea</em>
+								<em class="dj-name">DJ Sammybeeb</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 AM" data-end="10:00 AM" data-content="steelydan" data-event="event">
+							<a href="#0">
+								<em class="event-name">Steely Dan Fan Club</em>
+								<em class="dj-name">DJ nasty woman</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="heatcheck" data-event="event">
+							<a href="#0">
+								<em class="event-name">Heat Check</em>
+								<em class="dj-name">Andy Gabler</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="sportsstampede" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sports Stampede</em>
+								<em class="dj-name">Aaron Glazer</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="discover" data-event="event">
+							<a href="#0">
+								<em class="event-name">Discover Weekly</em>
+								<em class="dj-name">Connor Wilson</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="bside" data-event="event">
+							<a href="#0">
+								<em class="event-name">B side</em>
+								<em class="dj-name">B-side</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="summerofgeorge" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Summer of George</em>
+								<em class="dj-name">DJ Costanza</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="4:00 PM" data-content="backbeats" data-event="event">
+							<a href="#0">
+								<em class="event-name">Back Beats</em>
+								<em class="dj-name">DJ Lola</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:00 PM" data-end="5:00 PM" data-content="vampire" data-event="event">
+							<a href="#0">
+								<em class="event-name">Vampire Weekend at Bernie's</em>
+								<em class="dj-name">DJ Sinai</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="5:00 PM" data-end="6:00 PM" data-content="robottears" data-event="event">
+							<a href="#0">
+								<em class="event-name">robot tears</em>
+								<em class="dj-name">Nico-tine</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="7:00 PM" data-content="meshes" data-event="event">
+							<a href="#0">
+								<em class="event-name">Meshes of the Afternoon</em>
+								<em class="dj-name">Veronica</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 PM" data-end="8:00 PM" data-content="limbo" data-event="event">
+							<a href="#0">
+								<em class="event-name">Limbo</em>
+								<em class="dj-name">Benji Sound</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="howwas" data-event="event">
+							<a href="#0">
+								<em class="event-name">How Was Your Day?</em>
+								<em class="dj-name">Raj R. Rabbit and dj @uncle_tash</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="megabus" data-event="event">
+							<a href="#0">
+								<em class="event-name">Megabus Blues</em>
+								<em class="dj-name">DJ Distant Girlfriend</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="11:00 PM" data-content="ghoulschool" data-event="event">
+							<a href="#0">
+								<em class="event-name">Ghoul School</em>
+								<em class="dj-name">DJ Mama and DJ Snacks from Home</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 PM" data-end="12:00 AM" data-content="hottub" data-event="event">
+							<a href="#0">
+								<em class="event-name">Hot Tub Time Machine</em>
+								<em class="dj-name">fuhteems</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Thursday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Thursday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="12:00 AM" data-end="1:00 AM" data-content="jellies" data-event="event">
+							<a href="#0">
+								<em class="event-name">Jellies & Jams</em>
+								<em class="dj-name">DJ Yeep</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 AM" data-end="2:00 AM" data-content="outofyourgourd" data-event="event">
+							<a href="#0">
+								<em class="event-name">Out of Your Gourd</em>
+								<em class="dj-name">DJ Refried Beans</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 AM" data-end="3:00 AM" data-content="sowhat" data-event="event">
+							<a href="#0">
+								<em class="event-name">So What'd You Think?</em>
+								<em class="dj-name">DJ 20Nugs</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 AM" data-end="7:00 AM" data-content="sleepytimetunes" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sleepy Time Tunes</em>
+								<em class="dj-name">DJ Meli</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="groovytunes" data-event="event">
+							<a href="#0">
+								<em class="event-name">Groovy Tunes and Good Moods</em>
+								<em class="dj-name">Meg</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="9:00 AM" data-content="asmhour" data-event="event">
+							<a href="#0">
+								<em class="event-name">The ASMHour</em>
+								<em class="dj-name">DJ Snacks from Home and DJ Damien Worst</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 AM" data-end="10:00 AM" data-content="magichour" data-event="event">
+							<a href="#0">
+								<em class="event-name">Magic Hour</em>
+								<em class="dj-name">Clare</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="questionable" data-event="event">
+							<a href="#0">
+								<em class="event-name">Questionable.</em>
+								<em class="dj-name">Miranda Myers</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="buenas" data-event="event">
+							<a href="#0">
+								<em class="event-name">buenas vibraciones</em>
+								<em class="dj-name">dj polareis</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="forecast" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Forecast</em>
+								<em class="dj-name">DJ Weathaman</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="interdisciplinary" data-event="event">
+							<a href="#0">
+								<em class="event-name">interdisciplinary information</em>
+								<em class="dj-name">LIVIA</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="collegecollage" data-event="event">
+							<a href="#0">
+								<em class="event-name">The College Collage</em>
+								<em class="dj-name">The Empress</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="4:00 PM" data-content="kirby" data-event="event">
+							<a href="#0">
+								<em class="event-name">Kirby's Air Ride</em>
+								<em class="dj-name">Kirby_Heat</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:00 PM" data-end="4:30 PM" data-content="annenbergradio" data-event="event">
+							<a href="#0">
+								<em class="event-name">Annenberg Radio News</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="4:30 PM" data-end="5:30 PM" data-content="synthaesthetic" data-event="event">
+							<a href="#0">
+								<em class="event-name">Synth Aesthetic</em>
+								<em class="dj-name">MLSA</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="8:00 PM" data-content="bear" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Bear's Den</em>
+								<em class="dj-name">The Bear</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="undertheinfluence" data-event="event">
+							<a href="#0">
+								<em class="event-name">Under the Influence</em>
+								<em class="dj-name">Alison Wood</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="getjiggy" data-event="event">
+							<a href="#0">
+								<em class="event-name">Get Jiggy</em>
+								<em class="dj-name">Luna and Blu</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="11:00 PM" data-content="ihavetime" data-event="event">
+							<a href="#0">
+								<em class="event-name">I Have Time</em>
+								<em class="dj-name">DJ pay-per-jam</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 PM" data-end="12:00 AM" data-content="thewavelength" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Wavelength</em>
+								<em class="dj-name">Lil Gog</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Friday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Friday</span>
+					</div>
+
+					<ul>
+						<li class="single-event" data-start="12:00 AM" data-end="1:00 AM" data-content="drewcasper" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Drew Casper Power Hour</em>
+								<em class="dj-name">Anna Lobmeyer and DJ Elon Musk</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 AM" data-end="2:00 AM" data-content="quiubo" data-event="event">
+							<a href="#0">
+								<em class="event-name">2 Ruff 4 Radio</em>
+								<em class="dj-name">DJ Dwight</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 AM" data-end="8:00 AM" data-content="sweettalk" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sweet Talk</em>
+								<em class="dj-name">DJ Kiana</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 AM" data-end="9:00 AM" data-content="dreamstate" data-event="event">
+							<a href="#0">
+								<em class="event-name">Dream State</em>
+								<em class="dj-name">DJ Graven</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 AM" data-end="10:00 AM" data-content="justplaythehits" data-event="event">
+							<a href="#0">
+								<em class="event-name">Just Play the Hits</em>
+								<em class="dj-name">DJ Seen Leewow</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 AM" data-end="11:00 AM" data-content="soundinterrupted" data-event="event">
+							<a href="#0">
+								<em class="event-name">Sound Interrupted</em>
+								<em class="dj-name">Kristin</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 AM" data-end="12:00 PM" data-content="soupedup" data-event="event">
+							<a href="#0">
+								<em class="event-name">Souped Up</em>
+								<em class="dj-name">DJ Casanova</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="12:00 PM" data-end="1:00 PM" data-content="exfan" data-event="event">
+							<a href="#0">
+								<em class="event-name">Ex-Fan des Sixties</em>
+								<em class="dj-name">Princess Groove</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="1:00 PM" data-end="2:00 PM" data-content="realax" data-event="event">
+							<a href="#0">
+								<em class="event-name">Realax</em>
+								<em class="dj-name">Roger, the Cook</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="2:00 PM" data-end="3:00 PM" data-content="hxppyhr" data-event="event">
+							<a href="#0">
+								<em class="event-name">hxppy hr</em>
+								<em class="dj-name">dj normal korean</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="3:00 PM" data-end="6:00 PM" data-content="liveshow" data-event="event">
+							<a href="#0">
+								<em class="event-name">The Live Show</em>
+								<em class="dj-name">DJ Rat Villain</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="6:00 PM" data-end="7:00 PM" data-content="itsmells" data-event="event">
+							<a href="#0">
+								<em class="event-name">It Smells Loud in Here</em>
+								<em class="dj-name">DJ Stinky</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="7:00 PM" data-end="8:00 PM" data-content="altsilk" data-event="event">
+							<a href="#0">
+								<em class="event-name">Alt-Silk</em>
+								<em class="dj-name">DJ Emmy P</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="8:00 PM" data-end="9:00 PM" data-content="eljangueo" data-event="event">
+							<a href="#0">
+								<em class="event-name">El Jangueo</em>
+								<em class="dj-name">Cata</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="9:00 PM" data-end="10:00 PM" data-content="goldenhour" data-event="event">
+							<a href="#0">
+								<em class="event-name">golden hour</em>
+								<em class="dj-name">dj egg waffle</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="10:00 PM" data-end="11:00 PM" data-content="conditioning" data-event="event">
+							<a href="#0">
+								<em class="event-name">Conditioning</em>
+								<em class="dj-name">Jung Hollywood</em>
+							</a>
+						</li>
+						<li class="single-event" data-start="11:00 PM" data-end="12:00 AM" data-content="tokyodrift" data-event="event">
+							<a href="#0">
+								<em class="event-name">Tokyo Drift</em>
+								<em class="dj-name">dj cbay</em>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<!-- Saturday -->
+				<li class="events-group">
+					<div class="top-info">
+						<span>Saturday</span>
+					</div>
+
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="event-modal">
+			<header class="header">
+				<div class="content">
+					<span class="event-date"></span>
+					<h3 class="event-name"></h3>
+					<span class="dj-name"></span>
+				</div>
+
+				<div class="header-bg"></div>
+			</header>
+
+			<div class="body">
+				<div class="event-info"></div>
+				<div class="body-bg"></div>
+			</div>
+
+			<a href="#0" class="close">Close</a>
+		</div>
+
+		<div class="cover-layer"></div>
+	</div>
+
+	<!-- modernizr 3.3.1 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-csstransitions-setclasses ! -->
+	<script>
+		!function (e, n, t) { function r(e, n) { return typeof e === n } function s() { var e, n, t, s, o, i, a; for (var l in C) if (C.hasOwnProperty(l)) { if (e = [], n = C[l], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (t = 0; t < n.options.aliases.length; t++)e.push(n.options.aliases[t].toLowerCase()); for (s = r(n.fn, "function") ? n.fn() : n.fn, o = 0; o < e.length; o++)i = e[o], a = i.split("."), 1 === a.length ? Modernizr[a[0]] = s : (!Modernizr[a[0]] || Modernizr[a[0]] instanceof Boolean || (Modernizr[a[0]] = new Boolean(Modernizr[a[0]])), Modernizr[a[0]][a[1]] = s), g.push((s ? "" : "no-") + a.join("-")) } } function o(e) { var n = _.className, t = Modernizr._config.classPrefix || ""; if (S && (n = n.baseVal), Modernizr._config.enableJSClass) { var r = new RegExp("(^|\\s)" + t + "no-js(\\s|$)"); n = n.replace(r, "$1" + t + "js$2") } Modernizr._config.enableClasses && (n += " " + t + e.join(" " + t), S ? _.className.baseVal = n : _.className = n) } function i(e, n) { return function () { return e.apply(n, arguments) } } function a(e, n, t) { var s; for (var o in e) if (e[o] in n) return t === !1 ? e[o] : (s = n[e[o]], r(s, "function") ? i(s, t || n) : s); return !1 } function l() { return "function" != typeof n.createElement ? n.createElement(arguments[0]) : S ? n.createElementNS.call(n, "http://www.w3.org/2000/svg", arguments[0]) : n.createElement.apply(n, arguments) } function f(e, n) { return !!~("" + e).indexOf(n) } function u(e) { return e.replace(/([a-z])-([a-z])/g, function (e, n, t) { return n + t.toUpperCase() }).replace(/^-/, "") } function d(e) { return e.replace(/([A-Z])/g, function (e, n) { return "-" + n.toLowerCase() }).replace(/^ms-/, "-ms-") } function p() { var e = n.body; return e || (e = l(S ? "svg" : "body"), e.fake = !0), e } function c(e, t, r, s) { var o, i, a, f, u = "modernizr", d = l("div"), c = p(); if (parseInt(r, 10)) for (; r--;)a = l("div"), a.id = s ? s[r] : u + (r + 1), d.appendChild(a); return o = l("style"), o.type = "text/css", o.id = "s" + u, (c.fake ? c : d).appendChild(o), c.appendChild(d), o.styleSheet ? o.styleSheet.cssText = e : o.appendChild(n.createTextNode(e)), d.id = u, c.fake && (c.style.background = "", c.style.overflow = "hidden", f = _.style.overflow, _.style.overflow = "hidden", _.appendChild(c)), i = t(d, e), c.fake ? (c.parentNode.removeChild(c), _.style.overflow = f, _.offsetHeight) : d.parentNode.removeChild(d), !!i } function m(n, r) { var s = n.length; if ("CSS" in e && "supports" in e.CSS) { for (; s--;)if (e.CSS.supports(d(n[s]), r)) return !0; return !1 } if ("CSSSupportsRule" in e) { for (var o = []; s--;)o.push("(" + d(n[s]) + ":" + r + ")"); return o = o.join(" or "), c("@supports (" + o + ") { #modernizr { position: absolute; } }", function (e) { return "absolute" == getComputedStyle(e, null).position }) } return t } function h(e, n, s, o) { function i() { d && (delete z.style, delete z.modElem) } if (o = r(o, "undefined") ? !1 : o, !r(s, "undefined")) { var a = m(e, s); if (!r(a, "undefined")) return a } for (var d, p, c, h, v, y = ["modernizr", "tspan", "samp"]; !z.style && y.length;)d = !0, z.modElem = l(y.shift()), z.style = z.modElem.style; for (c = e.length, p = 0; c > p; p++)if (h = e[p], v = z.style[h], f(h, "-") && (h = u(h)), z.style[h] !== t) { if (o || r(s, "undefined")) return i(), "pfx" == n ? h : !0; try { z.style[h] = s } catch (g) { } if (z.style[h] != v) return i(), "pfx" == n ? h : !0 } return i(), !1 } function v(e, n, t, s, o) { var i = e.charAt(0).toUpperCase() + e.slice(1), l = (e + " " + b.join(i + " ") + i).split(" "); return r(n, "string") || r(n, "undefined") ? h(l, n, s, o) : (l = (e + " " + E.join(i + " ") + i).split(" "), a(l, n, t)) } function y(e, n, r) { return v(e, t, t, n, r) } var g = [], C = [], w = { _version: "3.3.1", _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 }, _q: [], on: function (e, n) { var t = this; setTimeout(function () { n(t[e]) }, 0) }, addTest: function (e, n, t) { C.push({ name: e, fn: n, options: t }) }, addAsyncTest: function (e) { C.push({ name: null, fn: e }) } }, Modernizr = function () { }; Modernizr.prototype = w, Modernizr = new Modernizr; var _ = n.documentElement, S = "svg" === _.nodeName.toLowerCase(), x = "Moz O ms Webkit", b = w._config.usePrefixes ? x.split(" ") : []; w._cssomPrefixes = b; var E = w._config.usePrefixes ? x.toLowerCase().split(" ") : []; w._domPrefixes = E; var P = { elem: l("modernizr") }; Modernizr._q.push(function () { delete P.elem }); var z = { style: P.elem.style }; Modernizr._q.unshift(function () { delete z.style }), w.testAllProps = v, w.testAllProps = y, Modernizr.addTest("csstransitions", y("transition", "all", !0)), s(), o(g), delete w.addTest, delete w.addAsyncTest; for (var N = 0; N < Modernizr._q.length; N++)Modernizr._q[N](); e.Modernizr = Modernizr }(window, document);
+	</script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
+	<script> if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');</script>
+	<script>
+		jQuery(document).ready(function ($) {
+			var transitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+			var transitionsSupported = ($('.csstransitions').length > 0);
+			//if browser does not support transitions - use a different event to trigger them
+			if (!transitionsSupported) transitionEnd = 'noTransition';
+
+			//should add a loding while the events are organized
+
+			function SchedulePlan(element) {
+				this.element = element;
+				this.timeline = this.element.find('.timeline');
+				this.timelineItems = this.timeline.find('li');
+				this.timelineItemsNumber = this.timelineItems.length;
+				// this.timelineStart = getScheduleTimestamp(this.timelineItems.eq(0).text());
+				this.timelineStart = getScheduleTimestamp("12:00 AM");
+				//need to store delta (in our case half hour) timestamp
+				this.timelineUnitDuration = getScheduleTimestamp(this.timelineItems.eq(1).text()) - getScheduleTimestamp(this.timelineItems.eq(0).text());
+
+				this.eventsWrapper = this.element.find('.events');
+				this.eventsGroup = this.eventsWrapper.find('.events-group');
+				this.singleEvents = this.eventsGroup.find('.single-event');
+				this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
+
+				this.modal = this.element.find('.event-modal');
+				this.modalHeader = this.modal.find('.header');
+				this.modalHeaderBg = this.modal.find('.header-bg');
+				this.modalBody = this.modal.find('.body');
+				this.modalBodyBg = this.modal.find('.body-bg');
+				this.modalMaxWidth = 800;
+				this.modalMaxHeight = 380; // changes size of the popup windows when events are clicked
+
+				this.animating = false;
+
+				this.initSchedule();
+			}
+
+			SchedulePlan.prototype.initSchedule = function () {
+				this.scheduleReset();
+				this.initEvents();
+			};
+
+			SchedulePlan.prototype.scheduleReset = function () {
+				var mq = this.mq();
+				if (mq == 'desktop' && !this.element.hasClass('js-full')) {
+					//in this case you are on a desktop version (first load or resize from mobile)
+					this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
+					this.element.addClass('js-full');
+					this.placeEvents();
+					this.element.hasClass('modal-is-open') && this.checkEventModal();
+				} else if (mq == 'mobile' && this.element.hasClass('js-full')) {
+					//in this case you are on a mobile version (first load or resize from desktop)
+					this.element.removeClass('js-full loading');
+					this.eventsGroup.children('ul').add(this.singleEvents).removeAttr('style');
+					this.eventsWrapper.children('.grid-line').remove();
+					this.element.hasClass('modal-is-open') && this.checkEventModal();
+				} else if (mq == 'desktop' && this.element.hasClass('modal-is-open')) {
+					//on a mobile version with modal open - need to resize/move modal window
+					this.checkEventModal('desktop');
+					this.element.removeClass('loading');
+				} else {
+					this.element.removeClass('loading');
+				}
+			};
+
+			SchedulePlan.prototype.initEvents = function () {
+				var self = this;
+
+				this.singleEvents.each(function () {
+					//create the .event-date element for each event
+					var durationLabel = '<span class="event-date">' + $(this).data('start') + ' - ' + $(this).data('end') + '</span>';
+					$(this).children('a').prepend($(durationLabel));
+
+					//detect click on the event and open the modal
+					$(this).on('click', 'a', function (event) {
+						event.preventDefault();
+						if (!self.animating) self.openModal($(this));
+					});
+				});
+
+				//close modal window
+				this.modal.on('click', '.close', function (event) {
+					event.preventDefault();
+					if (!self.animating) self.closeModal(self.eventsGroup.find('.selected-event'));
+				});
+				this.element.on('click', '.cover-layer', function (event) {
+					if (!self.animating && self.element.hasClass('modal-is-open')) self.closeModal(self.eventsGroup.find('.selected-event'));
+				});
+			};
+
+			SchedulePlan.prototype.placeEvents = function () {
+				var self = this;
+				var str = "";
+				this.singleEvents.each(function () {
+					//place each event in the grid -> need to set top position and height
+					var start = getScheduleTimestamp($(this).attr('data-start'));
+					var end = getScheduleTimestamp($(this).attr('data-end'));
+
+					var showName = $(this).attr('data-content');
+					str += "if (showName == '" + showName + "') {\n";
+					str += "var str= \"<div id='" + showName + "' class='content-loaded'>\";\n";
+					str += "str"
+					str += "str += \"<p>description</p></div>\";\nreturn str;\n}\n";
+
+					// handle display errors for shows that begin/end around midnight/noon
+					if (end == 0) end = 1440; // show ends at midnight
+					if (start < 720 && end == 1440) end = 720; // show ends at noon
+					if (start == 1440 && end > 720) start = 720; // show starts at noon
+
+					var duration = end - start;
+
+					var eventTop = self.eventSlotHeight * (start - self.timelineStart) / self.timelineUnitDuration,
+						eventHeight = self.eventSlotHeight * duration / self.timelineUnitDuration;
+
+					$(this).css({
+						top: (eventTop - 1) + 'px',
+						height: (eventHeight + 1) + 'px'
+					});
+				});
+				// console.log(str);
+				this.element.removeClass('loading');
+			};
+
+			// UPDATE SHOW INFO HERE
+			function getShowInfo(showName) {
+				// SUNDAY SHOWS
+				if (showName == "Roots Canal") {
+					var str = "<div id='rootscanal' class='content-loaded'>";
+					str += "<p style='color: black'>It's time for your weekly appointment with DJ Aural Hygiene. Let's just say I hope you flossed.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=446' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Big Gay Radio Hour") {
+					var str = "<div id='biggayradiohour' class='content-loaded'>";
+					str += "<p style='color: black'>It's Here, It's Queer, It's Music to Your Ears</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=772#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/gayxsc' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Slappers of the Week") {
+					var str = "<div id='slappers' class='content-loaded'>";
+					str += "<p style='color: black'>Slappers Mixed by yours truly <3</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=813#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Late Spring") {
+					var str = "<div id='thelatespring' class='content-loaded'>";
+					str += "<p style='color: black'>Spinning Your Favorite Tunes From Your Favorite Yellow Artists Presented By DJ hachimitsu</p><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "the xyz room hours III") {
+					var str = "<div id='xyz' class='content-loaded'>";
+					str += "<p style='color: black'>Sample Experiential Audio From Coast To Coast With Frums</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=521#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Corporate Finance Show") {
+					var str = "<div id='corporate' class='content-loaded'>";
+					str += "<p style='color: black'>free max B</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=350#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://soundcloud.com/chris-christi' target='_blank'>View Show on Soundcloud</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Sports Hour") {
+					var str = "<div id='sportshour' class='content-loaded'>";
+					str += "<p style='color: black'>Sports Talk Show</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=588#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "A Very Posh Show") {
+					var str = "<div id='poshshow' class='content-loaded'>";
+					str += "<p style='color: black'>Your weekly update on everything going on in the NBA.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=356#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "@home") {
+					var str = "<div id='@home' class='content-loaded'>";
+					str += "<p style='color: black'>Listen to music I like and I'll talk about it sometimes</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=414#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Home of House") {
+					var str = "<div id='homeofhouse' class='content-loaded'>";
+					str += "<p style='color: black'>New, Fresh Dance Music mixed by KX</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=777#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/MusicByKX' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Indie-Cision") {
+					var str = "<div id='indiecision' class='content-loaded'>";
+					str += "<p style='color: black'>An eclectic mix of indie and classics by your favorite indecisive DJ Meeks.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=580#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/indiewdjmeeks/' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Radio Somewhere") {
+					var str = "<div id='radiosomewhere' class='content-loaded'>";
+					str += "<p style='color: black'>Sundry surveys of sounds and scenes from sea to shining sea.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=615#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Procedurally Generated Disaster") {
+					var str = "<div id='procedurallygenerateddisaster' class='content-loaded'>";
+					str += "<p style='color: black'>A nice mix of sick tunes and cool games</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=753#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Ultimate Healthy Dose") {
+					var str = "<div id='ultimatehealthydose' class='content-loaded'>";
+					str += "<p style='color: black'>Just Crushed a Salad. Let's Do This.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=360#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Triple H") {
+					var str = "<div id='tripleh' class='content-loaded'>";
+					str += "<p style='color: black'>Wikki Wikki with dj ndab</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=826#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Sofa") {
+					var str = "<div id='thesofa' class='content-loaded'>";
+					str += "<p style='color: black'>handpicking only the tastiest aggressive and hardcore electro beatz</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=784#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "BigAnt Radio") {
+					var str = "<div id='bigantradio' class='content-loaded'>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=799#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "AudioBiography") {
+					var str = "<div id='audio' class='content-loaded'>";
+					str += "<p style='color: black'>Hear Someone's Story In 10 Songs or Less</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&sv=l&djuid=943#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+
+				// MONDAY SHOWS
+				if (showName == "girlz with grillz") {
+					var str = "<div id='girlzwithgrillz' class='content-loaded'>";
+					str += "<p style='color: black'>music from some of hip-hop's biggest baddies</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=292#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Rotation") {
+					var str = "<div id='therotation' class='content-loaded'>";
+					str += "<p style='color: black'>DJ Larry hams soothes the soul with an after-hours mix of hip hop and r&b</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=679#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Femme Fatals") {
+					var str = "<div id='femmefatals' class='content-loaded'>";
+					str += "<p style='color: black'>Weekly Doses of Humor From Everyone's Favorite Gender</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=889#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sweet Talk") {
+					var str = "<div id='sweettalk' class='content-loaded'>";
+					str += "<p style='color: black'>rockin tunes and talk with DJ Kiana</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=915#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Move") {
+					var str = "<div id='themove' class='content-loaded'>";
+					str += "<p style='color: black'>indie-alternative tracks inspired by real, big feelings</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=836#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Lyric Therapy Hour") {
+					var str = "<div id='thelyrictherapyhour' class='content-loaded'>";
+					str += "<p style='color: black'>Sharing Lyrics & Advice to Help Us Through Life</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=723#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/TheLyricTherapist-329088487167117/' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "La Unica Musica") {
+					var str = "<div id='launicamusica' class='content-loaded'>";
+					str += "<p style='color: black'>Bops by artists of color coming to you every week!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=760#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Lab") {
+					var str = "<div id='thelab' class='content-loaded'>";
+					str += "<p style='color: black'>New genres and different music each week</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=857#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "So It Goes...") {
+					var str = "<div id='soitgoes' class='content-loaded'>";
+					str += "<p style='color: black'>Books That Have Been Turned Into Movies And TV Shows, Yes Please!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=563#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "M E L L O W G O L D") {
+					var str = "<div id='mellowgold' class='content-loaded'>";
+					str += "<p style='color: black'>Sophisticated Dads Reminiscing</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=452#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "All Night All Right") {
+					var str = "<div id='allnightallright' class='content-loaded'>";
+					str += "<p style='color: black'>All Right Music All Night Long</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=417#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/phosphene___/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Ice Cream Antisocial") {
+					var str = "<div id='icecreamantisocial' class='content-loaded'>";
+					str += "<p style='color: black'>Only The Chillest of Jams, Scooped Up By DJ Satanic Mother & DJ Ex-Teen</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=241#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/KXSCicecreamantisocial' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "mystery time") {
+					var str = "<div id='mysterytime' class='content-loaded'>";
+					str += "<p style='color: black'>the best and most mysterious of all radio shows.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=298#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/mysterytimeshh' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Texulous Talk Show") {
+					var str = "<div id='texulous' class='content-loaded'>";
+					str += "<p style='color: black'>Scintillating, Squaminous</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=931#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Art of Space Radio") {
+					var str = "<div id='artofspaceradio' class='content-loaded'>";
+					str += "<p style='color: black'>Resistance through artistic expression.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=708#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Nina in a Haystack") {
+					var str = "<div id='nina' class='content-loaded'>";
+					str += "<p style='color: black'>Mixing Unique Finds Across Genres Every Week</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=780#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sadboys LLC: The Land Before Time") {
+					var str = "<div id='sadboys' class='content-loaded'>";
+					str += "<p style='color: black'>Sad Boys discuss their favorite sad artists</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=557#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Late Night A&R") {
+					var str = "<div id='latenight' class='content-loaded'>";
+					str += "<p style='color: black'>New Beats with Late Night A&R</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=459#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "a word") {
+					var str = "<div id='aword' class='content-loaded'>";
+					str += "<p style='color: black'>dj salve picks out music that matches with the word of the week. cause what starts out as a sound, ends in a deed.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=126#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Satan's Lair") {
+					var str = "<div id='satanslair' class='content-loaded'>";
+					str += "<p style='color: black'>Satan's Lair forever beckons you to enter.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=281#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Pepe's Playlist") {
+					var str = "<div id='pepes' class='content-loaded'>";
+					str += "<p style='color: black'>I am not a shrimp, I am a KING PRAWN OKAY !</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=28#here' target='_blank'>View DJ Liv's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=287#here' target='_blank'>View Kirby_Heat's playlists on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+				// TUESDAY SHOWS
+
+				if (showName == "First Impressions") {
+					var str = "<div id='firstimpressions' class='content-loaded'>";
+					str += "<p style='color: black'>There's a first time for everything.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=586#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "if i had the AUX cord") {
+					var str = "<div id='aux' class='content-loaded'>";
+					str += "<p style='color: black'>fresh hits and undiscovered talents</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=879#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sleepy Sadboi Lounge Hour") {
+					var str = "<div id='sleepysadboi' class='content-loaded'>";
+					str += "<p style='color: black'>Stole your grandma's record collection (and then i freaked it)</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=892#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "I'm Picking the Music!") {
+					var str = "<div id='impicking' class='content-loaded'>";
+					str += "<p style='color: black'>Music and conversation, curated by Edna Mode</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=894#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Bill Murray's House") {
+					var str = "<div id='billmurray' class='content-loaded'>";
+					str += "<p style='color: black'>An incoherent mess of indie rock and 90's nostalgia.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=919#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Inside Voices") {
+					var str = "<div id='insidevoices' class='content-loaded'>";
+					str += "<p style='color: black'>Locals Only Tunes for Kids Who Pick Their Nose in Traffic</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=801#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Brit(ish) Invasion") {
+					var str = "<div id='british' class='content-loaded'>";
+					str += "<p style='color: black'>The British are coming!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=378#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "best of the fest") {
+					var str = "<div id='bestofthefest' class='content-loaded'>";
+					str += "<p style='color: black'>the best music from your favorite festivals now and then</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=789#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "What Am I Watching?") {
+					var str = "<div id='whatamiwatching' class='content-loaded'>";
+					str += "<p style='color: black'>What Are We Actually Watching?: Posing Questions About The Biggest Movies, TV, and Plays of the Moment</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=476#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Yada Yada") {
+					var str = "<div id='yadayada' class='content-loaded'>";
+					str += "<p style='color: black'>Come explore the sub genres of rock ‘n’ roll with DJ Saabs</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=440#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Gab with Gab") {
+					var str = "<div id='gab' class='content-loaded'>";
+					str += "<p style='color: black'>Magical Music and Mind Moments With Gabra Cadabra</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=885#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Bitcrush") {
+					var str = "<div id='bitcrush' class='content-loaded'>";
+					str += "<p style='color: black'>A solid hour of bleeps and bloops.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=340#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "asdfa") {
+					var str = "<div id='angus' class='content-loaded'>";
+					str += "<p style='color: black'>Two Queens on Casino Night</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=735#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Annenberg Radio News") {
+					var str = "<div id='annenbergradio' class='content-loaded'>";
+					str += "<p style='color: black'>Student journalists at the Annenberg School for Communication and Journalism at the University of Southern California in Los Angeles, California produce audio stories aired on live broadcasts Tuesdays and Thursdays at 4 PM Pacific.</p><br>";
+					str += "<a href='http://www.uscannenbergmedia.com/listen/' target='_blank'>External Website</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Mid-Afternoon Show") {
+					var str = "<div id='midafternoon' class='content-loaded'>";
+					str += "<p style='color: black'>Political Comedy And Wacky Headlines It's Practically The News Anyway!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=563#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "are you gonna eat that") {
+					var str = "<div id='areyougonnaeatthat' class='content-loaded'>";
+					str += "<p style='color: black'>Just trying to make your brain bigger and your mouth water</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=390#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Pyschonautical Playground") {
+					var str = "<div id='psychonautical' class='content-loaded'>";
+					str += "<p style='color: black'>“It’s all in the mind, you know?”</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=234#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/ThePsychonauticalPlayground' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Down 2 Mars") {
+					var str = "<div id='down2mars' class='content-loaded'>";
+					str += "<p style='color: black'>Best songs brought to you each week by two real Down 2 Mars girls.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=552#here' target='_blank'>View Lil Yeti's playlistson Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=660#here' target='_blank'>View Llicey's playlists on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/down2marsgirls/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Mothership") {
+					var str = "<div id='mothership' class='content-loaded'>";
+					str += "<p style='color: black'>Get abducted by The Mothership every Tuesday at 9PM.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=366#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/TheMothership63/' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "WEAPONS FM") {
+					var str = "<div id='weaponsfm' class='content-loaded'>";
+					str += "<p style='color: black'>WEAPONS FM DONT TOUCH THAT DIAL</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=134#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+				// WEDNESDAY SHOWS
+
+				if (showName == "Jellies & Jams") {
+					var str = "<div id='jellies' class='content-loaded'>";
+					str += "<p style='color: black'>Serving up the jamiest jellies and the jelliest jams this side of the Mississippi</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=795#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Out of Your Gourd") {
+					var str = "<div id='outofyourgourd' class='content-loaded'>";
+					str += "<p style='color: black'>Music and conversation from people you'll never know</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=637#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "So What'd You Think?") {
+					var str = "<div id='sowhat' class='content-loaded'>";
+					str += "<p style='color: black'>Me and a friend reacting to a movie we chose... LIVE!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=921#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "fuzz") {
+					var str = "<div id='fuzz' class='content-loaded'>";
+					str += "<p style='color: black'>Why everything sounds the same</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=888#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/fuzz.01/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Tea") {
+					var str = "<div id='thetea' class='content-loaded'>";
+					str += "<p style='color: black'>Tunes To Drink Tea To</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=897#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Steely Dan Fan Club") {
+					var str = "<div id='steelydan' class='content-loaded'>";
+					str += "<p style='color: black'>A Smooth, Smooth Ride Down the Rock River with DJ Nasty Woman</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=781#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Heat Check") {
+					var str = "<div id='heatcheck' class='content-loaded'>";
+					str += "<p style='color: black'>The Incessant Arguing of Two Degenerate Sports Fans</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=512#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sports Stampede") {
+					var str = "<div id='sportsstampede' class='content-loaded'>";
+					str += "<p style='color: black'>Giving the Dose of Sports Talk You Need</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=924#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Discover Weekly") {
+					var str = "<div id='discover' class='content-loaded'>";
+					str += "<p style='color: black'>Updated every Wednesday, so save your favorites!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=802#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "B side") {
+					var str = "<div id='bside' class='content-loaded'>";
+					str += "<p style='color: black'>get hip on detroit</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=313#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Summer of George") {
+					var str = "<div id='summerofgeorge' class='content-loaded'>";
+					str += "<p style='color: black'>Tunes Just As Good As An Eclair From The Garbage</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=874#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://twitter.com/dj_costanza' target='_blank'>Follow DJ Costanza on Twitter</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Back Beats") {
+					var str = "<div id='backbeats' class='content-loaded'>";
+					str += "<p style='color: black'>Differing artists that have songs that share the same thing with some background and fun facts every week by DJ Lola</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=936#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Vampire Weekend at Bernie's") {
+					var str = "<div id='vampire' class='content-loaded'>";
+					str += "<p style='color: black'>Alternative Rock Meets Socialist Vermont Senator Meets Mediocre 80's Movie</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=910#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "robot tears") {
+					var str = "<div id='robottears' class='content-loaded'>";
+					str += "<p style='color: black'>i spilled water on the mixer this is what it sounds like</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=783#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Meshes of the Afternoon") {
+					var str = "<div id='meshes' class='content-loaded'>";
+					str += "<p style='color: black'>Psychedelic tunes that'll make your pops nostalgic for the time before your conception</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=353#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Limbo") {
+					var str = "<div id='limbo' class='content-loaded'>";
+					str += "<p style='color: black'>Setting the bar</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=410#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "How Was Your Day?") {
+					var str = "<div id='howwas' class='content-loaded'>";
+					str += "<p style='color: black'>Let's Talk About It Babe, We're Here to Listen</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=240#here' target='_blank'>View Raj R. Rabbit's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=329#here' target='_blank'>View dj @uncle_tash on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/KXSCgoontown/' target='_blank'>Follow How Was Your Day? on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Megabus Blues") {
+					var str = "<div id='megabus' class='content-loaded'>";
+					str += "<p style='color: black'>Moody bops for broody babes</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=381#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/rennieys/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Ghoul School") {
+					var str = "<div id='ghoulschool' class='content-loaded'>";
+					str += "<p style='color: black'>Paranormal stories and spooky content galore !</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=545#here' target='_blank'>View DJ Mama's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=851#here' target='_blank'>View DJ Snacks from Home's playlists on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Hot Tub Time Machine") {
+					var str = "<div id='hottub' class='content-loaded'>";
+					str += "<p style='color: black'>kick back with some throwbacks every week with dj fuhteems</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=841#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/httmkxsc/?modal=admin_todo_tour' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+				// THURSDAY SHOWS
+
+				if (showName == "The Drew Casper Power Hour") {
+					var str = "<div id='drewcasper' class='content-loaded'>";
+					str += "<p style='color: black'>Indie Jams, Movie Debates, and Satanic Worship For the Depressed Film Student</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=748#here' target='_blank'>View Anna Lobmeyer's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=934#here' target='_blank'>View DJ Elon Musk's playlists on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "2 Ruff 4 Radio") {
+					var str = "<div id='2ruff' class='content-loaded'>";
+					str += "<p style='color: black'>I can feel it coming in the air(waves) tonight</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=787#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sleepy Time Tunes") {
+					var str = "<div id='sleepytimetunes' class='content-loaded'>";
+					str += "<p style='color: black'>Chill Tracks Weekly with DJ meli</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=906#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Groovy Tunes and Good Moods") {
+					var str = "<div id='groovytunes' class='content-loaded'>";
+					str += "<p style='color: black'>Tunes That You Won't Hear Twice by Meg</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=903#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The ASMHour") {
+					var str = "<div id='asmhour' class='content-loaded'>";
+					str += "<p style='color: black'>Sit back, relax, and tingle</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=851#here' target='_blank'>View DJ Snacks from Home's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=912#here' target='_blank'>View DJ Damien Worst's playlists on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Magic Hour") {
+					var str = "<div id='magichour' class='content-loaded'>";
+					str += "<p style='color: black'>Listen to Magic Hour with a candle burning and you will see your entire future</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=856#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Questionable.") {
+					var str = "<div id='questionable' class='content-loaded'>";
+					str += "<p style='color: black'>You never know what you're gonna get.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=863#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "buenas vibraciones") {
+					var str = "<div id='buenas' class='content-loaded'>";
+					str += "<p style='color: black'>make sure you look both ways before crossing memory lane!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=870#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Forecast") {
+					var str = "<div id='forecast' class='content-loaded'>";
+					str += "<p style='color: black'>Predicting the hottest new music every week</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=847#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/theweathaman/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "interdisciplinary information") {
+					var str = "<div id='interdisciplinary' class='content-loaded'>";
+					str += "<p style='color: black'>an intriguing aural journey with some insightful conversation sprinkled in</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=569#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The College Collage") {
+					var str = "<div id='collegecollage' class='content-loaded'>";
+					str += "<p style='color: black'>Allow The Empress to impress you...</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=597#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/The-College-Collage-on-KXSC-491991987827467/' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Kirby's Air Ride") {
+					var str = "<div id='kirby' class='content-loaded'>";
+					str += "<p style='color: black'>Ride the airwaves</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=287#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://twitter.com/KirbyHeat' target='_blank'>Follow Kirby on Twitter</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Annenberg Radio News") {
+					var str = "<div id='annenbergradio' class='content-loaded'>";
+					str += "<p style='color: black'>Student journalists at the Annenberg School for Communication and Journalism at the University of Southern California in Los Angeles, California produce audio stories aired on live broadcasts Tuesdays and Thursdays at 4 PM Pacific.</p><br>";
+					str += "<a href='http://www.uscannenbergmedia.com/listen/' target='_blank'>External website</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Synth Aesthetic") {
+					var str = "<div id='synthaesthetic' class='content-loaded'>";
+					str += "<p style='color: black'>All things electronic !</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=747#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Bear's Den") {
+					var str = "<div id='bear' class='content-loaded'>";
+					str += "<p style='color: black'>New Bands, Old Bands, Punk Bands! (and others) every show</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=16#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.facebook.com/thebearsdenonkxsc' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Under the Influence") {
+					var str = "<div id='undertheinfluence' class='content-loaded'>";
+					str += "<p style='color: black'>Great artists and the influences who started it all!</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=652#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Get Jiggy") {
+					var str = "<div id='getjiggy' class='content-loaded'>";
+					str += "<p style='color: black'>Sweet tunes coming at ya live from your fave astronomical bodies. Listen to the BEST with the BEST. Get jiggy with Luna and DJ Blue to find new toonage</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=612#here' target='_blank'>View Luna's playlists on Spinitron</a><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=882#here' target='_blank'>View Blu's playlists on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "I Have Time") {
+					var str = "<div id='ihavetime' class='content-loaded'>";
+					str += "<p style='color: black'>From acing tests to making copies--playing music for the late night studier to the office contrarian</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=110#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Wavelength") {
+					var str = "<div id='thewavelength' class='content-loaded'>";
+					str += "<p style='color: black'>Radio Waves of Good Vibrations</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=468#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+				// FRIDAY SHOWS
+
+				if (showName == "Dream State") {
+					var str = "<div id='dreamstate' class='content-loaded'>";
+					str += "<p style='color: black'>Iconic Beats Brought To You Every Week By DJ Graven</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=930#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Just Play the Hits") {
+					var str = "<div id='justplaythehits' class='content-loaded'>";
+					str += "<p style='color: black'>All the Hits, All the Time</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=739#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Sound Interrupted") {
+					var str = "<div id='soundinterrupted' class='content-loaded'>";
+					str += "<p style='color: black'>fresh new songs</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=810#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://www.instagram.com/michael.K.music/' target='_blank'>View Show on Instagram</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Souped Up") {
+					var str = "<div id='soupedup' class='content-loaded'>";
+					str += "<p style='color: black'>DJ Casanova’s alphabet soup, served weekly and made with luvvv</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=453#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Ex-Fan des Sixties") {
+					var str = "<div id='exfan' class='content-loaded'>";
+					str += "<p style='color: black'>Let's Groove! These boots WERE made for walking</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=497#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Realax") {
+					var str = "<div id='realax' class='content-loaded'>";
+					str += "<p style='color: black'>R&R on Realax Radio</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=624#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://twitter.com/RadioRealax' target='_blank'>Follow Realax Radio on Twitter</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "hxppy hr") {
+					var str = "<div id='hxppyhr' class='content-loaded'>";
+					str += "<p style='color: black'>we're on the air because we care</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=262#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "The Live Show") {
+					var str = "<div id='liveshow' class='content-loaded'>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=801#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "It Smells Loud in Here") {
+					var str = "<div id='itsmells' class='content-loaded'>";
+					str += "<p style='color: black'>Woowee! Pungent tracks with DJ Stinky for when you want to cry or start a mosh pit by yourself.</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=745#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Alt-Silk") {
+					var str = "<div id='altsilk' class='content-loaded'>";
+					str += "<p style='color: black'>Red Wine & Cashmere Vibes</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=462#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "El Jangueo") {
+					var str = "<div id='eljangueo' class='content-loaded'>";
+					str += "<p style='color: black'>Latin jams and good vibes</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=299#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "golden hour") {
+					var str = "<div id='goldenhour' class='content-loaded'>";
+					str += "<p style='color: black'>get in ur feelings with dj egg waffle</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=927#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://twitter.com/djeggwaffle' target='_blank'>Follow dj egg waffle on Twitter</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Conditioning") {
+					var str = "<div id='conditioning' class='content-loaded'>";
+					str += "<p style='color: black'>Sweet jams, rare gems + more 4 u !</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=506#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += "<a href='https://soundcloud.com/conditioningla%20' target='_blank'>View Show on Soundcloud</a><br>";
+					str += "<a href='https://www.facebook.com/conditioningla/' target='_blank'>View Show on Facebook</a><br>";
+					str += '</div>';
+					return str;
+				}
+				if (showName == "Tokyo Drift") {
+					var str = "<div id='tokyodrift' class='content-loaded'>";
+					str += "<p style='color: black'>the funk shall be within you</p><br>";
+					str += "<a href='https://spinitron.com/radio/playlist.php?station=kxsc&djuid=577#here' target='_blank'>View Show on Spinitron</a><br>";
+					str += '</div>';
+					return str;
+				}
+
+
+			}
+
+			SchedulePlan.prototype.openModal = function (event) {
+				var self = this;
+				var mq = self.mq();
+				this.animating = true;
+
+				//update event name and time
+				this.modalHeader.find('.event-name').text(event.find('.event-name').text());
+				this.modalHeader.find('.event-date').text(event.find('.event-date').text());
+				this.modalHeader.find('.dj-name').text(event.find('.dj-name').text());
+				this.modal.attr('data-event', event.parent().attr('data-event'));
+
+				//update event content
+				this.modalBody.find('.event-info').append(getShowInfo(event.find('.event-name').text()));
+				self.element.addClass('content-loaded');
+
+				this.element.addClass('modal-is-open');
+
+				setTimeout(function () {
+					//fixes a flash when an event is selected - desktop version only
+					event.parent('li').addClass('selected-event');
+				}, 10);
+
+				if (mq == 'mobile') {
+					self.modal.one(transitionEnd, function () {
+						self.modal.off(transitionEnd);
+						self.animating = false;
+					});
+				} else {
+					var eventTop = event.offset().top - $(window).scrollTop(),
+						eventLeft = event.offset().left,
+						eventHeight = event.innerHeight(),
+						eventWidth = event.innerWidth();
+
+					var windowWidth = $(window).width(),
+						windowHeight = $(window).height();
+
+					var modalWidth = (windowWidth * .8 > self.modalMaxWidth) ? self.modalMaxWidth : windowWidth * .8,
+						modalHeight = (windowHeight * .8 > self.modalMaxHeight) ? self.modalMaxHeight : windowHeight * .8;
+
+					var modalTranslateX = parseInt((windowWidth - modalWidth) / 2 - eventLeft),
+						modalTranslateY = parseInt((windowHeight - modalHeight) / 2 - eventTop);
+
+					var HeaderBgScaleY = modalHeight / eventHeight,
+						BodyBgScaleX = (modalWidth - eventWidth);
+
+					//change modal height/width and translate it
+					self.modal.css({
+						top: eventTop + 'px',
+						left: eventLeft + 'px',
+						height: modalHeight + 'px',
+						width: modalWidth + 'px',
+					});
+					transformElement(self.modal, 'translateY(' + modalTranslateY + 'px) translateX(' + modalTranslateX + 'px)');
+
+					//set modalHeader width
+					self.modalHeader.css({
+						width: eventWidth + 'px',
+					});
+					//set modalBody left margin
+					self.modalBody.css({
+						marginLeft: eventWidth + 'px',
+					});
+
+					//change modalBodyBg height/width ans scale it
+					self.modalBodyBg.css({
+						height: eventHeight + 'px',
+						width: '1px',
+					});
+					transformElement(self.modalBodyBg, 'scaleY(' + HeaderBgScaleY + ') scaleX(' + BodyBgScaleX + ')');
+
+					//change modal modalHeaderBg height/width and scale it
+					self.modalHeaderBg.css({
+						height: eventHeight + 'px',
+						width: eventWidth + 'px',
+					});
+					transformElement(self.modalHeaderBg, 'scaleY(' + HeaderBgScaleY + ')');
+
+					self.modalHeaderBg.one(transitionEnd, function () {
+						//wait for the  end of the modalHeaderBg transformation and show the modal content
+						self.modalHeaderBg.off(transitionEnd);
+						self.animating = false;
+						self.element.addClass('animation-completed');
+					});
+				}
+
+				//if browser do not support transitions -> no need to wait for the end of it
+				if (!transitionsSupported) self.modal.add(self.modalHeaderBg).trigger(transitionEnd);
+			};
+
+			SchedulePlan.prototype.closeModal = function (event) {
+				var self = this;
+				var mq = self.mq();
+
+				this.animating = true;
+
+				if (mq == 'mobile') {
+					this.element.removeClass('modal-is-open');
+					this.modal.one(transitionEnd, function () {
+						self.modal.off(transitionEnd);
+						self.animating = false;
+						self.element.removeClass('content-loaded');
+						event.removeClass('selected-event');
+					});
+				} else {
+					var eventTop = event.offset().top - $(window).scrollTop(),
+						eventLeft = event.offset().left,
+						eventHeight = event.innerHeight(),
+						eventWidth = event.innerWidth();
+
+					var modalTop = Number(self.modal.css('top').replace('px', '')),
+						modalLeft = Number(self.modal.css('left').replace('px', ''));
+
+					var modalTranslateX = eventLeft - modalLeft,
+						modalTranslateY = eventTop - modalTop;
+
+					self.element.removeClass('animation-completed modal-is-open');
+
+					//change modal width/height and translate it
+					this.modal.css({
+						width: eventWidth + 'px',
+						height: eventHeight + 'px'
+					});
+					transformElement(self.modal, 'translateX(' + modalTranslateX + 'px) translateY(' + modalTranslateY + 'px)');
+
+					//scale down modalBodyBg element
+					transformElement(self.modalBodyBg, 'scaleX(0) scaleY(1)');
+					//scale down modalHeaderBg element
+					transformElement(self.modalHeaderBg, 'scaleY(1)');
+
+					this.modalHeaderBg.one(transitionEnd, function () {
+						//wait for the  end of the modalHeaderBg transformation and reset modal style
+						self.modalHeaderBg.off(transitionEnd);
+						self.modal.addClass('no-transition');
+						setTimeout(function () {
+							self.modal.add(self.modalHeader).add(self.modalBody).add(self.modalHeaderBg).add(self.modalBodyBg).attr('style', '');
+						}, 10);
+						setTimeout(function () {
+							self.modal.removeClass('no-transition');
+						}, 20);
+
+						self.animating = false;
+						self.element.removeClass('content-loaded');
+						event.removeClass('selected-event');
+					});
+				}
+
+				$(".event-modal .body .event-info").empty();
+
+				//browser do not support transitions -> no need to wait for the end of it
+				if (!transitionsSupported) self.modal.add(self.modalHeaderBg).trigger(transitionEnd);
+			}
+
+			SchedulePlan.prototype.mq = function () {
+				//get MQ value ('desktop' or 'mobile')
+				var self = this;
+				return window.getComputedStyle(this.element.get(0), '::before').getPropertyValue('content').replace(/["']/g, '');
+			};
+
+			SchedulePlan.prototype.checkEventModal = function (device) {
+				this.animating = true;
+				var self = this;
+				var mq = this.mq();
+
+				if (mq == 'mobile') {
+					//reset modal style on mobile
+					self.modal.add(self.modalHeader).add(self.modalHeaderBg).add(self.modalBody).add(self.modalBodyBg).attr('style', '');
+					self.modal.removeClass('no-transition');
+					self.animating = false;
+				} else if (mq == 'desktop' && self.element.hasClass('modal-is-open')) {
+					self.modal.addClass('no-transition');
+					self.element.addClass('animation-completed');
+					var event = self.eventsGroup.find('.selected-event');
+
+					var eventTop = event.offset().top - $(window).scrollTop(),
+						eventLeft = event.offset().left,
+						eventHeight = event.innerHeight(),
+						eventWidth = event.innerWidth();
+
+					var windowWidth = $(window).width(),
+						windowHeight = $(window).height();
+
+					var modalWidth = (windowWidth * .8 > self.modalMaxWidth) ? self.modalMaxWidth : windowWidth * .8,
+						modalHeight = (windowHeight * .8 > self.modalMaxHeight) ? self.modalMaxHeight : windowHeight * .8;
+
+					var HeaderBgScaleY = modalHeight / eventHeight,
+						BodyBgScaleX = (modalWidth - eventWidth);
+
+					setTimeout(function () {
+						self.modal.css({
+							width: modalWidth + 'px',
+							height: modalHeight + 'px',
+							top: (windowHeight / 2 - modalHeight / 2) + 'px',
+							left: (windowWidth / 2 - modalWidth / 2) + 'px',
+						});
+						transformElement(self.modal, 'translateY(0) translateX(0)');
+						//change modal modalBodyBg height/width
+						self.modalBodyBg.css({
+							height: modalHeight + 'px',
+							width: '1px',
+						});
+						transformElement(self.modalBodyBg, 'scaleX(' + BodyBgScaleX + ')');
+						//set modalHeader width
+						self.modalHeader.css({
+							width: eventWidth + 'px',
+						});
+						//set modalBody left margin
+						self.modalBody.css({
+							marginLeft: eventWidth + 'px',
+						});
+						//change modal modalHeaderBg height/width and scale it
+						self.modalHeaderBg.css({
+							height: eventHeight + 'px',
+							width: eventWidth + 'px',
+						});
+						transformElement(self.modalHeaderBg, 'scaleY(' + HeaderBgScaleY + ')');
+					}, 10);
+
+					setTimeout(function () {
+						self.modal.removeClass('no-transition');
+						self.animating = false;
+					}, 20);
+				}
+			};
+
+			var schedules = $('.cd-schedule');
+			var objSchedulesPlan = [],
+				windowResize = false;
+
+			if (schedules.length > 0) {
+				schedules.each(function () {
+					//create SchedulePlan objects
+					objSchedulesPlan.push(new SchedulePlan($(this)));
+				});
+			}
+
+			$(window).on('resize', function () {
+				if (!windowResize) {
+					windowResize = true;
+					(!window.requestAnimationFrame) ? setTimeout(checkResize) : window.requestAnimationFrame(checkResize);
+				}
+			});
+
+			$(window).keyup(function (event) {
+				if (event.keyCode == 27) {
+					objSchedulesPlan.forEach(function (element) {
+						element.closeModal(element.eventsGroup.find('.selected-event'));
+					});
+				}
+			});
+
+			function checkResize() {
+				objSchedulesPlan.forEach(function (element) {
+					element.scheduleReset();
+				});
+				windowResize = false;
+			}
+
+			function getScheduleTimestamp(time) {
+				time = time.trim();
+				var ampm = time.slice(-2);
+				var timeArray = time.split(':');
+				var timeStamp;
+				if (ampm == "AM") {
+					if (timeArray[0] == "12") return parseInt(timeArray[1]);
+					timeStamp = parseInt(timeArray[0]) * 60 + parseInt(timeArray[1]);
+
+				}
+				else if (ampm == "PM") {
+					var hour = parseInt(timeArray[0]) + 12;
+					timeStamp = hour * 60 + parseInt(timeArray[1]);
+				}
+				return timeStamp;
+			}
+
+			function transformElement(element, value) {
+				element.css({
+					'-moz-transform': value,
+					'-webkit-transform': value,
+					'-ms-transform': value,
+					'-o-transform': value,
+					'transform': value
+				});
+			}
+		});
+	</script>
+</body>
+
+</html>
