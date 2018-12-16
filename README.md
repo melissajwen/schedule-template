@@ -1,4 +1,5 @@
 Schedule Template forked from CodyHouse
+
 [Article on CodyHouse](https://codyhouse.co/gem/schedule-template/)
 
 [Demo](https://codyhouse.co/demo/schedule-template/index.html)
